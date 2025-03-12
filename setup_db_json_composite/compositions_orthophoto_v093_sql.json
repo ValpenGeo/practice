@@ -6,19 +6,19 @@
       "delete": false,
       "parameters": {
         "schema": "orthophoto",
-        "table": "comp_def",
+        "table": "composition_definition",
         "command": [
-          "comp_id TEXT",
+          "composition_id text",
           "content varchar",
           "layer_id varchar",
           "prefix varchar",
           "scale_factor real",
           "offset_add real",
-          "measure char(1) NOT NULL",
+          "measure char(1) not null",
           "data_unit varchar",
           "title varchar",
           "label varchar",
-          "PRIMARY KEY (comp_id)"
+          "primary_key (composition_id)"
         ]
       }
     },
@@ -28,20 +28,20 @@
       "delete": false,
       "parameters": {
         "schema": "ancillary",
-        "table": "comp_prod",
+        "table": "composition_product",
         "command": [
-          "comp_id TEXT",
-          "system varchar NOT NULL",
-          "source TEXT",
+          "composition_id text",
+          "system varchar not null",
+          "source text",
           "product varchar",
           "suffix varchar",
           "cell_null real",
           "cell_type varchar",
-          "masked character(1) DEFAULT 'N'",
+          "masked character(1) default 'N'",
           "title varchar",
           "label varchar",
           "frequency varchar",
-          "PRIMARY KEY (comp_id, source, product, suffix)"
+          "primary_key (composition_id, source, product, suffix)"
         ]
       }
     },
@@ -54,16 +54,16 @@
         "table": "layer",
         "command": [
           "layer_id bigserial",
-          "comp_id TEXT",
-          "source TEXT",
+          "composition_id text",
+          "source text",
           "product varchar",
           "suffix varchar",
           "acquisition_date_str varchar",
           "acquisition_date date",
           "doy smallint",
-          "create_date date DEFAULT CURRENT_DATE",
+          "create_date date default current_date",
           "region_id varchar",
-          "PRIMARY KEY (comp_id, source, product, suffix, region_id, acquisition_date_str)"
+          "primary_key (composition_id, source, product, suffix, region_id, acquisition_date_str)"
         ]
       }
     }

@@ -1,0 +1,94 @@
+{
+  "process": [
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "modis",
+        "table": "comp_def",
+        "command": [
+          "comp_id TEXT",
+          "content varchar",
+          "layer_id varchar",
+          "prefix varchar",
+          "scale_factor real",
+          "offset_add real",
+          "measure char(1) NOT NULL",
+          "data_unit varchar",
+          "title varchar",
+          "label varchar",
+          "PRIMARY KEY (comp_id)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "modis",
+        "table": "comp_prod",
+        "command": [
+          "comp_id TEXT",
+          "system varchar NOT NULL",
+          "source TEXT",
+          "product varchar",
+          "suffix varchar",
+          "cell_null real",
+          "cell_type varchar",
+          "masked character(1) DEFAULT 'N'",
+          "title varchar",
+          "label varchar",
+          "frequency varchar",
+          "PRIMARY KEY (comp_id, source, product, suffix)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "modis",
+        "table": "layer",
+        "command": [
+          "layer_id bigserial",
+          "comp_id TEXT",
+          "source TEXT",
+          "product varchar",
+          "suffix varchar",
+          "acquisition_date_str varchar",
+          "acquisition_date date",
+          "doy smallint",
+          "create_date date DEFAULT CURRENT_DATE",
+          "h_tile smallint",
+          "v_tile smallint",
+          "hv_tile char(8)",
+          "PRIMARY KEY (comp_id, source, product, suffix, h_tile, v_tile, acquisition_date_str)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "modis",
+        "table": "mask",
+        "command": [
+          "source TEXT",
+          "product varchar",
+          "cell_null smallint",
+          "water smallint",
+          "cloud_shadow smallint",
+          "snow smallint",
+          "cloud smallint",
+          "clear smallint",
+          "mask smallint ARRAY[3]",
+          "PRIMARY KEY (source, product)"
+        ]
+      }
+    }
+  ]
+}

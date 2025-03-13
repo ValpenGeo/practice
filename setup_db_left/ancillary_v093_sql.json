@@ -1,0 +1,86 @@
+{
+  "process": [
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "ancillary",
+        "table": "dataset_comp_id",
+        "command": [
+          "dataset_id TEXT",
+          "comp_id TEXT",
+          "PRIMARY KEY (dataset_id, comp_id)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "ancillary",
+        "table": "dataset",
+        "command": [
+          "dataset_id TEXT NOT NULL",
+          "dataset_version varchar NOT NULL",
+          "dataset_name varchar NOT NULL",
+          "org_id TEXT NOT NULL",
+          "region_id varchar NOT NULL",
+          "title varchar",
+          "label varchar",
+          "data_url varchar",
+          "meta_url varchar",
+          "access_date DATE DEFAULT CURRENT_DATE DEFAULT CURRENT_DATE DEFAULT CURRENT_DATE",
+          "copyright TEXT",
+          "start_date DATE",
+          "end_date DATE",
+          "PRIMARY KEY(dataset_id)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "ancillary",
+        "table": "dataset_layer",
+        "command": [
+          "dataset_id TEXT",
+          "data_directory TEXT",
+          "data_file TEXT",
+          "data_file_type varchar",
+          "metadir TEXT",
+          "theme varchar",
+          "sub_theme varchar",
+          "PRIMARY KEY(dataset_id, data_directory, data_file)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "ancillary",
+        "table": "author",
+        "command": [
+          "inst_id TEXT",
+          "author_id TEXT",
+          "author_url TEXT",
+          "author_email TEXT",
+          "author_address_1 varchar",
+          "author_address_2 varchar",
+          "author_city varchar",
+          "author_zip varchar",
+          "author_state varchar",
+          "author_country_id CHAR(2)",
+          "author_tel varchar",
+          "author_fax varchar",
+          "PRIMARY KEY(inst_id, author_id)"
+        ]
+      }
+    }
+  ]
+}

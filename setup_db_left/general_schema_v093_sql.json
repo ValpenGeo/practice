@@ -1,0 +1,164 @@
+{
+  "process": [
+    {
+      "process_id": "create_schema",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "process"
+      }
+    },
+    {
+      "process_id": "create_schema",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "ancillary"
+      }
+    },
+    {
+      "process_id": "create_schema",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "system"
+      }
+    },
+    {
+      "process_id": "create_schema",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "regions"
+      }
+    },
+    {
+      "process_id": "create_schema",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "landsat"
+      }
+    },
+    {
+      "process_id": "create_schema",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "sentinel"
+      }
+    },
+    {
+      "process_id": "create_schema",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "modis"
+      }
+    },
+    {
+      "process_id": "create_schema",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "user_locale"
+      }
+    },
+    {
+      "process_id": "create_schema",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "specimen"
+      }
+    },
+    {
+      "process_id": "create_schema",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "topography"
+      }
+    },
+    {
+      "process_id": "create_schema",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "layout"
+      }
+    },
+    {
+      "process_id": "create_schema",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "export"
+      }
+    },
+    {
+      "process_id": "create_schema",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "soil_moisture"
+      }
+    },
+    {
+      "process_id": "create_schema",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "smap"
+      }
+    },
+    {
+      "process_id": "create_schema",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "modis_polar"
+      }
+    },
+    {
+      "process_id": "create_schema",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "ease2n"
+      }
+    },
+    {
+      "process_id": "create_schema",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "ease2s"
+      }
+    },
+    {
+      "process_id": "create_schema",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "ease2t"
+      }
+    },
+    {
+      "process_id": "create_schema",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "climate_index"
+      }
+    },
+    {
+      "process_id": "create_schema",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "orthophoto"
+      }
+    }
+  ]
+}

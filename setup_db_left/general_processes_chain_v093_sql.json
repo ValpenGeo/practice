@@ -1,0 +1,93 @@
+{
+  "process": [
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "process",
+        "table": "process_chain",
+        "command": [
+          "chain_id TEXT",
+          "title TEXT",
+          "label TEXT",
+          "creator varchar",
+          "owner varchar",
+          "sharing varchar",
+          "create_date date",
+          "PRIMARY KEY (chain_id)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "process",
+        "table": "chain_process",
+        "command": [
+          "chain_id TEXT",
+          "chain_step smallint",
+          "sub_proc_id TEXT",
+          "version varchar",
+          "PRIMARY KEY (chain_id, chain_step, sub_proc_id)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "process",
+        "table": "chain_comp_in",
+        "command": [
+          "chain_id TEXT",
+          "chain_step smallint",
+          "comp_id varchar",
+          "suffix varchar",
+          "PRIMARY KEY (chain_id, chain_step, comp_id,suffix)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "process",
+        "table": "chain_params",
+        "command": [
+          "chain_id TEXT",
+          "chain_step smallint",
+          "parameter varchar",
+          "value varchar",
+          "PRIMARY KEY (chain_id, chain_step, parameter, value)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "process",
+        "table": "chain_comp_out",
+        "command": [
+          "chain_id TEXT",
+          "chain_step smallint",
+          "comp_id varchar",
+          "suffix varchar",
+          "cell_null integer",
+          "cell_type varchar",
+          "scale_factor real",
+          "offset_add integer",
+          "data_unit varchar",
+          "measure char(1)",
+          "PRIMARY KEY (chain_id, chain_step, comp_id, suffix)"
+        ]
+      }
+    }
+  ]
+}

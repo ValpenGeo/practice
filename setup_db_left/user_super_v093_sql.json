@@ -1,0 +1,204 @@
+{
+  "process": [
+    {
+      "process_id": "table_insert",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "user_locale",
+        "table": "users",
+        "command": {
+          "columns": [
+            "user_id",
+            "user_pswd",
+            "stratum",
+            "user_cat"
+          ],
+          "values": [
+            [
+              "'inGenkangiSSa'",
+              "'jfeo-P9hy4-Oinv-'",
+              "10",
+              "'super'"
+            ],
+            [
+              "'anvaendarefixaren'",
+              "'kjuuY8-O8--oiTu6-Zf'",
+              "9",
+              "'userfix'"
+            ],
+            [
+              "'karttur'",
+              "'weg-iK8-tng-w9k'",
+              "10",
+              "'super'"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "process_id": "table_update",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "user_locale",
+        "table": "users",
+        "command": {
+          "where": "user_id = 'inGenkangiSSa'",
+          "columns": [
+            "user_cat",
+            "stratum"
+          ],
+          "values": [
+            "'super'",
+            "10"
+          ]
+        }
+      }
+    },
+    {
+      "process_id": "table_update",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "user_locale",
+        "table": "users",
+        "command": {
+          "where": "user_id = 'anvaendarefixaren'",
+          "columns": [
+            "user_cat",
+            "stratum"
+          ],
+          "values": [
+            "'userfix'",
+            "9"
+          ]
+        }
+      }
+    },
+    {
+      "process_id": "table_insert",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "regions",
+        "table": "tracts",
+        "command": {
+          "columns": [
+            "parent_id",
+            "tract_id",
+            "tract_name",
+            "creator",
+            "owner",
+            "share"
+          ],
+          "values": [
+            [
+              "'global'",
+              "'karttur'",
+              "'Global'",
+              "'karttur'",
+              "'karttur'",
+              "0"
+            ],
+            [
+              "'global'",
+              "'globalsuper'",
+              "'Global'",
+              "'inGenkangiSSa'",
+              "'inGenkangiSSa'",
+              "0"
+            ],
+            [
+              "'global'",
+              "'globalusers'",
+              "'Global'",
+              "'anvaendarefixaren'",
+              "'anvaendarefixaren'",
+              "0"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "process_id": "table_insert",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "user_locale",
+        "table": "user_projects",
+        "command": {
+          "columns": [
+            "proj_id",
+            "proj_name",
+            "owner",
+            "creator",
+            "share",
+            "title",
+            "label"
+          ],
+          "values": [
+            [
+              "'nooneCanGuess'",
+              "'nooneCanGuess'",
+              "'inGenkangiSSa'",
+              "'inGenkangiSSa'",
+              "0",
+              "'superuser'",
+              "'superuser access'"
+            ],
+            [
+              "'userfixer'",
+              "'userfixer'",
+              "'anvaendarefixaren'",
+              "'anvaendarefixaren'",
+              "0",
+              "'userad_ministrator'",
+              "'userad_ministrator access'"
+            ],
+            [
+              "'karttur'",
+              "'karttur'",
+              "'karttur'",
+              "'karttur'",
+              "0",
+              "'karttur super user'",
+              "'karttur super user access'"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "process_id": "table_insert",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "user_locale",
+        "table": "link_proj_region",
+        "command": {
+          "columns": [
+            "proj_id",
+            "region_id"
+          ],
+          "values": [
+            [
+              "'karttur'",
+              "'karttur'"
+            ],
+            [
+              "'globalsuper'",
+              "'nooneCanGuess'"
+            ],
+            [
+              "'globalusers'",
+              "'userfixer'"
+            ]
+          ]
+        }
+      }
+    }
+  ]
+}

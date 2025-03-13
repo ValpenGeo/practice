@@ -1,0 +1,227 @@
+{
+  "process": [
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "soil_moisture",
+        "table": "dataset",
+        "command": [
+          "datasetid TEXT NOT NULL",
+          "datasetname varchar NOT NULL",
+          "inst_id TEXT NOT NULL",
+          "region_id varchar NOT NULL",
+          "region_cat varchar NOT NULL",
+          "title varchar",
+          "label varchar",
+          "data_url varchar",
+          "meta_url varchar",
+          "meta_path varchar",
+          "data_dir varchar",
+          "data_file varchar",
+          "start_date DATE",
+          "end_date DATE",
+          "PRIMARY KEY(datasetid)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "soil_moisture",
+        "table": "networks",
+        "command": [
+          "network_id varchar",
+          "network TEXT",
+          "PRIMARY KEY(network)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "soil_moisture",
+        "table": "stations",
+        "command": [
+          "network_id varchar",
+          "station_id TEXT",
+          "lat double precision",
+          "lon double precision",
+          "sm_min_depth float",
+          "sm_max_depth float",
+          "air_temp char(1) DEFAULT 'N'",
+          "soil_temp char(1) DEFAULT 'N'",
+          "precip char(1) DEFAULT 'N'",
+          "snow_depth char(1) DEFAULT 'N'",
+          "create_date date DEFAULT CURRENT_DATE",
+          "PRIMARY KEY (station_id)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "soil_moisture",
+        "table": "daily05",
+        "command": [
+          "network_id varchar",
+          "station_id TEXT",
+          "datum date",
+          "soil_moisture float",
+          "PRIMARY KEY (network_id, station_id, datum)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "soil_moisture",
+        "table": "noon05",
+        "command": [
+          "network_id varchar",
+          "station_id TEXT",
+          "datum date",
+          "soil_moisture float",
+          "PRIMARY KEY (network_id, station_id, datum)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "soil_moisture",
+        "table": "am05",
+        "command": [
+          "network_id varchar",
+          "station_id TEXT",
+          "datum date",
+          "soil_moisture float",
+          "PRIMARY KEY (network_id, station_id, datum)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "soil_moisture",
+        "table": "pm05",
+        "command": [
+          "network_id varchar",
+          "station_id TEXT",
+          "datum date",
+          "soil_moisture float",
+          "PRIMARY KEY (network_id, station_id, datum)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "soil_moisture",
+        "table": "evening05",
+        "command": [
+          "network_id varchar",
+          "station_id TEXT",
+          "datum date",
+          "soil_moisture float",
+          "PRIMARY KEY (network_id, station_id, datum)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "soil_moisture",
+        "table": "daily_max",
+        "command": [
+          "network_id varchar",
+          "station_id TEXT",
+          "datum date",
+          "soil_moisture float",
+          "PRIMARY KEY (network_id, station_id, datum)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "soil_moisture",
+        "table": "noon_max",
+        "command": [
+          "network_id varchar",
+          "station_id TEXT",
+          "datum date",
+          "soil_moisture float",
+          "PRIMARY KEY (network_id, station_id, datum)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "soil_moisture",
+        "table": "am_max",
+        "command": [
+          "network_id varchar",
+          "station_id TEXT",
+          "datum date",
+          "soil_moisture float",
+          "PRIMARY KEY (network_id, station_id, datum)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "soil_moisture",
+        "table": "pm_max",
+        "command": [
+          "network_id varchar",
+          "station_id TEXT",
+          "datum date",
+          "soil_moisture float",
+          "PRIMARY KEY (network_id, station_id, datum)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "soil_moisture",
+        "table": "evening_max",
+        "command": [
+          "network_id varchar",
+          "station_id TEXT",
+          "datum date",
+          "soil_moisture float",
+          "PRIMARY KEY (network_id, station_id, datum)"
+        ]
+      }
+    }
+  ]
+}

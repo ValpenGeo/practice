@@ -1,0 +1,124 @@
+{
+  "process": [
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "user_locale",
+        "table": "user_projects",
+        "command": [
+          "userproj_id bigserial",
+          "proj_id TEXT",
+          "proj_name varchar NOT NULL",
+          "owner varchar NOT NULL",
+          "creator varchar NOT NULL",
+          "share smallint DEFAULT 5",
+          "title varchar",
+          "label varchar",
+          "descript TEXT",
+          "create_date date DEFAULT CURRENT_DATE",
+          "PRIMARY KEY (proj_id)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "user_locale",
+        "table": "proj_levels",
+        "command": [
+          "proj_level TEXT",
+          "title varchar",
+          "label varchar",
+          "PRIMARY KEY (proj_level)"
+        ]
+      }
+    },
+    {
+      "process_id": "table_insert",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "user_locale",
+        "table": "proj_levels",
+        "command": {
+          "columns": [
+            "proj_level","title","label"
+          ],
+          "values": [
+            [
+              "'TRANSINDEX'",
+              "'Transformed indexing using multiband data'",
+              "'Define deterministic model from multiband data using unitary matrix transformation and reference data'"
+            ],
+            [
+              "'STATS'",
+              "'Statistical modeling - not implemented'",
+              "'Define statistical model from multiband data using unitary matrix transformation and reference data'"
+            ],
+            [
+              "'HYDRO'",
+              "'Hydrological model calibration'",
+              "'Hydrological model calibration by definition of relation between soil moisture conditions and runoff/evapotranspiration'"
+            ],
+            [
+              "'TCI'",
+              "'Topographic conversion/wetness modeling'",
+              "'Calibrate function defining soil wetness from topographic conditions and hydrological estimates'"
+            ],
+            [
+              "'ES'",
+              "'Expert system rule defintions'",
+              "'Calibrate expert rules for mapping local/regional/global conditions'"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "user_locale",
+        "table": "proj_keywords",
+        "command": [
+          "proj_id TEXT",
+          "keyword TEXT",
+          "PRIMARY KEY (proj_id, keyword)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "user_locale",
+        "table": "proj_ancil",
+        "command": [
+          "proj_id TEXT",
+          "ancil_id TEXT",
+          "PRIMARY KEY (proj_id, ancil_id)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "user_locale",
+        "table": "link_proj_region",
+        "command": [
+          "proj_id TEXT",
+          "region_id varchar",
+          "PRIMARY KEY (proj_id, region_id)"
+        ]
+      }
+    }
+  ]
+}

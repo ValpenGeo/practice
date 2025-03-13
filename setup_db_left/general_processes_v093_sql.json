@@ -1,0 +1,138 @@
+{
+  "process": [
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "process",
+        "table": "root_processes",
+        "command": [
+          "root_proc_id TEXT",
+          "title varchar",
+          "label varchar",
+          "creator varchar",
+          "PRIMARY KEY (root_proc_id)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "process",
+        "table": "sub_processes",
+        "command": [
+          "root_proc_id TEXT",
+          "sub_proc_id TEXT",
+          "version varchar",
+          "min_user_stratum integer",
+          "title varchar",
+          "label varchar",
+          "creator varchar",
+          "access varchar",
+          "create_date date",
+          "PRIMARY KEY (sub_proc_id, version)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "process",
+        "table": "proc_div",
+        "command": [
+          "sub_proc_id TEXT",
+          "division varchar",
+          "PRIMARY KEY (sub_proc_id, division)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "process",
+        "table": "proc_sys",
+        "command": [
+          "sub_proc_id TEXT",
+          "system varchar",
+          "src_system varchar",
+          "dst_system varchar",
+          "src_division varchar",
+          "dst_division varchar",
+          "src_epsg integer",
+          "dst_epsg integer",
+          "PRIMARY KEY (sub_proc_id, system, src_system, dst_system, src_division, dst_division)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "process",
+        "table": "process_params",
+        "command": [
+          "root_proc_id TEXT",
+          "sub_proc_id TEXT",
+          "version varchar",
+          "parent varchar",
+          "element varchar",
+          "param_id varchar",
+          "param_typ varchar",
+          "required BOOL",
+          "default_value varchar",
+          "hint varchar",
+          "band_id varchar DEFAULT 'False'",
+          "PRIMARY KEY (sub_proc_id, version, parent, element, param_id, default_value, band_id)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "process",
+        "table": "process_param_set_values",
+        "command": [
+          "root_proc_id TEXT",
+          "sub_proc_id TEXT",
+          "version varchar",
+          "parent varchar",
+          "element varchar",
+          "param_id varchar",
+          "value varchar",
+          "label varchar",
+          "PRIMARY KEY (sub_proc_id, version, parent, element, param_id, value)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "process",
+        "table": "process_param_set_min_max",
+        "command": [
+          "root_proc_id TEXT",
+          "sub_proc_id TEXT",
+          "version varchar",
+          "parent varchar",
+          "element varchar",
+          "param_id varchar",
+          "min_val real",
+          "max_val real",
+          "PRIMARY KEY (sub_proc_id, version, parent, element, param_id)"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,451 @@
+{
+  "process": [
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "user_locale",
+        "table": "users",
+        "command": [
+          "user_nr bigserial",
+          "user_id TEXT",
+          "user_pswd varchar",
+          "first_name varchar",
+          "middle_name varchar",
+          "last_name varchar",
+          "address_name varchar",
+          "title varchar",
+          "user_title char(1) DEFAULT 'N'",
+          "country char(2)",
+          "state varchar",
+          "address_1 varchar",
+          "address_2 varchar",
+          "post_code varchar",
+          "post_address varchar",
+          "email_1 varchar",
+          "email_2 varchar",
+          "landline varchar",
+          "mobile varchar",
+          "organization varchar",
+          "department varchar",
+          "org_unit varchar",
+          "position varchar",
+          "user_cat varchar",
+          "stratum smallint",
+          "PRIMARY KEY (user_id)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "user_locale",
+        "table": "organisations",
+        "command": [
+          "inst_id TEXT",
+          "inst_name varchar NOT NULL",
+          "inst_url varchar",
+          "inst_email varchar",
+          "inst_address_1 varchar",
+          "inst_address_2 varchar",
+          "inst_city varchar",
+          "inst_zip varchar",
+          "inst_state varchar",
+          "inst_country_id CHAR(2)",
+          "inst_tel varchar",
+          "inst_fax varchar",
+          "access_date DATE DEFAULT CURRENT_DATE",
+          "status varchar",
+          "PRIMARY KEY(inst_id)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "user_locale",
+        "table": "theme_ids",
+        "command": [
+          "theme_id INTEGER NOT NULL",
+          "theme varchar NOT NULL",
+          "status varchar",
+          "PRIMARY KEY(theme_id)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "user_locale",
+        "table": "user_cats",
+        "command": [
+          "user_cat varchar",
+          "stratum integer NOT NULL",
+          "title varchar",
+          "label varchar",
+          "descript TEXT",
+          "save_view char(1) DEFAULT 'Y'",
+          "share_view char(1) DefAULT 'Y'",
+          "layout char(1) DEFAULT 'Y'",
+          "save_layout char(1) DEFAULT 'Y'",
+          "share_layout char(1) DefAULT 'Y'",
+          "max_def_region varchar DEFAULT 'country'",
+          "max_tracts integer DEFAULT 0",
+          "max_sites integer DEFAULT 0",
+          "max_samples integer DEFAULT 0",
+          "max_scenes integer DEFAULT 0",
+          "model_cal char(1) DEFAULT 'N'",
+          "model_form char(1) DEFAULT 'N'",
+          "model_save char(1) DEFAULT 'N'",
+          "model_share char(1) DEFAULT 'N'",
+          "ancil_add char(1) DEFAULT 'N'",
+          "max_ancil INTEGER DEFAULT 0",
+          "screen_dig char(1) DEFAULT 'Y'",
+          "layer_extract char(1) DEFAULT 'Y'",
+          "region_cell_max INTEGER DEFAULT 512",
+          "max_MB integer DEFAULT 1",
+          "PRIMARY KEY (user_cat)"
+        ]
+      }
+    },
+    {
+      "process_id": "table_insert",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "user_locale",
+        "table": "user_cats",
+        "command": {
+          "columns": [
+            "user_cat",
+            "stratum",
+            "title",
+            "label",
+            "max_def_region",
+            "max_tracts",
+            "max_sites",
+            "max_samples",
+            "max_scenes",
+            "model_cal",
+            "model_form",
+            "model_save",
+            "model_share",
+            "ancil_add",
+            "max_ancil",
+            "screen_dig",
+            "layer_extract",
+            "region_cell_max",
+            "max_MB"
+          ],
+          "values": [
+            [
+              "'super'",
+              "0",
+              "'superuser'",
+              "'superuser'",
+              "0",
+              "-22",
+              "-22",
+              "-22",
+              "-22",
+              "'Y'",
+              "'Y'",
+              "'Y'",
+              "'Y'",
+              "'Y'",
+              "-22",
+              "'Y'",
+              "'Y'",
+              "-22",
+              "-22"
+            ],
+            [
+              "'global'",
+              "'1'",
+              "'global'",
+              "'user with global access and capability'",
+              "1",
+              "100",
+              "1000",
+              "1000000",
+              "100",
+              "'Y'",
+              "'Y'",
+              "'Y'",
+              "'Y'",
+              "'Y'",
+              "100",
+              "'Y'",
+              "'Y'",
+              "1024",
+              "2000"
+            ],
+            [
+              "'develop'",
+              "'3'",
+              "'developer'",
+              "'developer with global access and capability'",
+              "1",
+              "10",
+              "100",
+              "10000",
+              "10",
+              "'Y'",
+              "'Y'",
+              "'Y'",
+              "'Y'",
+              "'Y'",
+              "10",
+              "'Y'",
+              "'Y'",
+              "1024",
+              "200"
+            ],
+            [
+              "'hydro'",
+              "'5'",
+              "'hydrologist'",
+              "'user for hydrological modeling'",
+              "4",
+              "5",
+              "20",
+              "10000",
+              "5",
+              "'Y'",
+              "'Y'",
+              "'Y'",
+              "'Y'",
+              "'Y'",
+              "120",
+              "'Y'",
+              "'Y'",
+              "1024",
+              "200"
+            ],
+            [
+              "'modeller'",
+              "'7'",
+              "'modeller'",
+              "'local model developer'",
+              "4",
+              "1",
+              "5",
+              "1000",
+              "2",
+              "'Y'",
+              "'Y'",
+              "'Y'",
+              "'Y'",
+              "'Y'",
+              "5",
+              "'Y'",
+              "'Y'",
+              "512",
+              "20"
+            ],
+            [
+              "'continent'",
+              "'9'",
+              "'continental'",
+              "'user with continental access and capability'",
+              "2",
+              "10",
+              "100",
+              "100000",
+              "10",
+              "'Y'",
+              "'N'",
+              "'Y'",
+              "'Y'",
+              "'Y'",
+              "10",
+              "'Y'",
+              "'Y'",
+              "1024",
+              "200"
+            ],
+            [
+              "'country'",
+              "'11'",
+              "'country'",
+              "'user with country access and capability'",
+              "4",
+              "5",
+              "20",
+              "10000",
+              "5",
+              "'Y'",
+              "'N'",
+              "'Y'",
+              "'Y'",
+              "'Y'",
+              "5",
+              "'Y'",
+              "'Y'",
+              "1024",
+              "50"
+            ],
+            [
+              "'place'",
+              "'13'",
+              "'user for single location(place)'",
+              "'user with local access and capability'",
+              "4",
+              "1",
+              "5",
+              "1000",
+              "2",
+              "'Y'",
+              "'N'",
+              "'Y'",
+              "'Y'",
+              "'Y'",
+              "5",
+              "'Y'",
+              "'Y'",
+              "512",
+              "10"
+            ],
+            [
+              "'viewer'",
+              "'15'",
+              "'viewer'",
+              "'viewer'",
+              "0",
+              "1",
+              "1",
+              "0",
+              "1",
+              "'N'",
+              "'N'",
+              "'N'",
+              "'N'",
+              "'N'",
+              "0",
+              "'Y'",
+              "'N'",
+              "512",
+              "1"
+            ],
+            [
+              "'guest'",
+              "'20'",
+              "'guest'",
+              "'guest'",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "'N'",
+              "'N'",
+              "'N'",
+              "'N'",
+              "'N'",
+              "0",
+              "'N'",
+              "'N'",
+              "512",
+              "0"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "process_id": "table_insert",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "system",
+        "table": "region_cats",
+        "command": {
+          "columns": [
+            "region_cat",
+            "parent_cat",
+            "stratum",
+            "title",
+            "label"
+          ],
+          "values": [
+            [
+              "'globe'",
+              "'self'",
+              "'0'",
+              "'The entire Earth'",
+              "'Stratum 0 (global) only has a single region - the entire Earth globe'"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "process_id": "table_insert",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "system",
+        "table": "def_regions",
+        "command": {
+          "columns": [
+            "region_cat",
+            "region_id",
+            "region_name",
+            "parent_id",
+            "title",
+            "label"
+          ],
+          "values": [
+            [
+              "'globe'",
+              "'globe'",
+              "'globe'",
+              "'self'",
+              "'globe region'",
+              "'The globe region is never used, only used to allow defining all other regions'"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "process_id": "table_insert",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "system",
+        "table": "regions",
+        "command": {
+          "columns": [
+            "region_cat",
+            "region_id",
+            "region_type",
+            "epsg",
+            "ul_lat",
+            "ul_lon",
+            "ur_lat",
+            "ur_lon",
+            "lr_lat",
+            "lr_lon",
+            "ll_lat",
+            "ll_lon",
+            "min_x",
+            "min_y",
+            "max_x",
+            "max_y"
+          ],
+          "values": [
+            ["'globe'","'globe'","'D'","'4326'","90","-180","90","180","-90","180","-90","-180","-180","-90","180","90"]
+          ]
+        }
+      }
+    }
+  ]
+}

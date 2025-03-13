@@ -1,0 +1,206 @@
+{
+  "process": [
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "layout",
+        "table": "raster_pal_colors",
+        "command": [
+          "palette varchar",
+          "value smallint NOT NULL",
+          "red smallint NOT NULL",
+          "green smallint NOT NULL",
+          "blue smallint NOT NULL",
+          "alpha smallint NOT NULL",
+          "label varchar",
+          "hint varchar",
+          "PRIMARY KEY (palette, value)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "layout",
+        "table": "legend",
+        "command": [
+          "comp_id TEXT",
+          "source TEXT",
+          "product varchar",
+          "suffix varchar",
+          "pal_min smallint",
+          "pal_max smallint",
+          "precision smallint",
+          "two_51 char(1) DEFAULT 'N'",
+          "two_52 char(1) DEFAULT 'N'",
+          "two_53 char(1) DEFAULT 'N'",
+          "two_54 char(1) DEFAULT 'N'",
+          "two_55 char(1) DEFAULT 'N'",
+          "height smallint DEFAULT 500",
+          "width smallint DEFAULT 100",
+          "solo_height smallint DEFAULT 70",
+          "png_height smallint DEFAULT 300",
+          "png_width smallint DEFAULT 300",
+          "measure char(1)",
+          "buffer smallint ARRAY[4] DEFAULT '{5,5,5,5}'",
+          "margin smallint ARRAY[4] DEFAULT '{5,5,5,5}'",
+          "text_padding smallint ARRAY[4] DEFAULT '{5,5,5,5}'",
+          "separate_buffer smallint ARRAY[4] DEFAULT '{5,5,5,5}'",
+          "frame_stroke_width real DEFAULT 1.0",
+          "frame_color smallint DEFAULT 254",
+          "frame_fill varchar DEFAULT 'black'",
+          "label char(1)",
+          "stick_len smallint DEFAULT 0",
+          "compress_labels char(1) DEFAULT 'N'",
+          "font varchar DEFAULT 'verdana'",
+          "font_color varchar DEFAULT 'black'",
+          "font_size smallint DEFAULT 12",
+          "font_effect varchar DEFAULT ''",
+          "title_font varchar DEFAULT 'verdana'",
+          "title_font_color varchar DEFAULT 'black'",
+          "title_font_size smallint DEFAULT 24",
+          "title_font_effect varchar DEFAULT ''",
+          "columns smallint DEFAULT 1",
+          "matrix char(1) DEFAULT 'N'",
+          "column_text TEXT",
+          "row_text TEXT",
+          "column_head TEXT",
+          "row_head TEXT",
+          "today date",
+          "creator varchar",
+          "PRIMARY KEY (comp_id, source, product, suffix)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "layout",
+        "table": "scaling",
+        "command": [
+          "comp_id TEXT",
+          "source TEXT",
+          "product varchar",
+          "suffix varchar",
+          "power real",
+          "power_na smallint",
+          "log BOOLEAN default FALSE",
+          "mirror_0 BOOLEAN",
+          "scale_factor real",
+          "offset_add real",
+          "src_min real",
+          "src_max real",
+          "dst_min real",
+          "dst_max real",
+          "today date",
+          "creator varchar",
+          "PRIMARY KEY (comp_id, source, product, suffix)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "layout",
+        "table": "default_palette",
+        "command": [
+          "comp_id TEXT",
+          "palette TEXT",
+          "PRIMARY KEY (comp_id, palette)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "layout",
+        "table": "raster_palette",
+        "command": [
+          "comp_id TEXT",
+          "palette TEXT",
+          "owner TEXT",
+          "access char(1) DEFAULT 'A'",
+          "PRIMARY KEY (comp_id, palette)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "layout",
+        "table": "movie_clock",
+        "command": [
+          "name TEXT",
+          "tl_margin smallint ARRAY[4] DEFAULT '{5,5,5,5}'",
+          "cl_margin smallint ARRAY[4] DEFAULT '{5,5,5,5}'",
+          "position char(2) DEFAULT 'll'",
+          "bg_color varchar DEFAULT 'black'",
+          "tl_border smallint DEFAULT 2",
+          "cl_border smallint DEFAULT 6",
+          "tl_bordercolor varchar DEFAULT 'beige'",
+          "cl_bordercolor varchar DEFAULT 'beige'",
+          "cl_color varchar DEFAULT 'blue'",
+          "tl_height smallint DEFAULT 10",
+          "tl_ticks smallint DEFAULT 1",
+          "tl_tick_width smallint DEFAULT 2",
+          "tick_color varchar DEFAULT 'beige'",
+          "boett_color varchar DEFAULT 'silver'",
+          "text_at_clock BOOLEAN DEFAULT FALSE",
+          "tl_color varchar DEFAULT 'purple'",
+          "cl_radius smallint DEFAULT 50",
+          "cl_hand_color varchar DEFAULT 'purple'",
+          "cl_frame_color varchar DEFAULT 'black'",
+          "font_size smallint DEFAULT 24",
+          "font_color varchar DEFAULT 'gray'",
+          "font_background varchar DEFAULT 'black'",
+          "rotate smallint DEFAULT 315",
+          "font varchar DEFAULT 'Arial'",
+          "text_in_video BOOLEAN DEFAULT FALSE",
+          "transparent varchar DEFAULT 'black'",
+          "creator varchar",
+          "access char(1) DEFAULT 'A'",
+          "PRIMARY KEY (name)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "layout",
+        "table": "pubtext",
+        "command": [
+          "comp_id TEXT",
+          "product varchar",
+          "suffix varchar",
+          "title varchar",
+          "header varchar",
+          "sub_header varchar",
+          "legend_header varchar",
+          "legend_type varchar",
+          "banner TEXT",
+          "hints TEXT",
+          "acknow TEXT",
+          "descript TEXT",
+          "reference TEXT",
+          "disclaim TEXT",
+          "copyright TEXT",
+          "PRIMARY KEY (comp_id, product, suffix)"
+        ]
+      }
+    }
+  ]
+}

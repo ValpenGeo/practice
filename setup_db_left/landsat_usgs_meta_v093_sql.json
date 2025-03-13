@@ -1,0 +1,138 @@
+{
+    "sql": {
+        "process": [
+            {
+                "@process_id": "create_table",
+                "parameters": {
+                    "@db": "karttur",
+                    "@schema": "landsat",
+                    "@table": "meta_main"
+                },
+                "overwrite": "N",
+                "delete": "N",
+                "command": "\n\t\t\tid SERIAL PRIMARY KEY,\n\t\t\tscene_id character(21),\n\t\t\tcopy_file varchar\n\t\t"
+            },
+            {
+                "@process_id": "create_table",
+                "parameters": {
+                    "@db": "karttur",
+                    "@schema": "landsat",
+                    "@table": "meta_sub"
+                },
+                "overwrite": "N",
+                "delete": "N",
+                "command": "\n\t\t\tid SERIAL PRIMARY KEY,\n\t\t\tscene_id character(21),\n\t\t\tcopy_file varchar\n\t\t"
+            },
+            {
+                "@process_id": "create_table",
+                "parameters": {
+                    "@db": "karttur",
+                    "@schema": "landsat",
+                    "@table": "meta_coll"
+                },
+                "overwrite": "N",
+                "delete": "N",
+                "command": "\n\t\t\tid SERIAL PRIMARY KEY,\n\t\t\tscene_id character(21),\n\t\t\tcopy_file varchar\n\t\t"
+            },
+            {
+                "@process_id": "create_table",
+                "parameters": {
+                    "@db": "karttur",
+                    "@schema": "landsat",
+                    "@table": "meta_geo"
+                },
+                "overwrite": "N",
+                "delete": "N",
+                "command": "\n\t\t\tid SERIAL PRIMARY KEY,\n\t\t\tscene_id character(21),\n\t\t\tcopy_file varchar\n\t\t"
+            },
+            {
+                "@process_id": "create_table",
+                "parameters": {
+                    "@db": "karttur",
+                    "@schema": "landsat",
+                    "@table": "meta_url"
+                },
+                "overwrite": "N",
+                "delete": "N",
+                "command": "\n\t\t\tid SERIAL PRIMARY KEY,\n\t\t\tscene_id character(21),\n\t\t\tcopy_file varchar\n\t\t"
+            },
+            {
+                "@process_id": "create_table",
+                "parameters": {
+                    "@db": "karttur",
+                    "@schema": "landsat",
+                    "@table": "meta_status"
+                },
+                "overwrite": "N",
+                "delete": "N",
+                "command": "\n\t\t\tscene_id character(21),\n\t\t\tcollection smallint,\n\t\t\ttier char(2),\n\t\t\tdownloaded char(1),\n\t\t\torganized char(1),\n\t\t\texplolded char(1),\n\t\t\tPRIMARY KEY (scene_id, collection, tier)\n\t\t"
+            },
+            {
+                "@process_id": "create_table",
+                "parameters": {
+                    "@db": "karttur",
+                    "@schema": "landsat",
+                    "@table": "meta_links"
+                },
+                "overwrite": "N",
+                "delete": "N",
+                "command": "\n\t\t\tsensor varchar,\n\t\t\tcsv_header varchar,\n\t\t\txml_parent_id varchar,\n\t\t\txml_element varchar,\n\t\t\tmeta_table varchar,\n\t\t\tmeta_column varchar,\n\t\t\tmeta_type  varchar,\n\t\t\tmeta_length integer,\n\t\t\trequired char(1),\n\t\t\tdefault_value varchar,\n\t\t\tPRIMARY KEY (sensor, meta_column)\n\t\t"
+            },
+            {
+                "@process_id": "create_table",
+                "parameters": {
+                    "@db": "karttur",
+                    "@schema": "landsat",
+                    "@table": "usgs_bulk_meta"
+                },
+                "overwrite": "N",
+                "delete": "N",
+                "command": "\n\t\t\tcollection varchar,\n\t\t\tlevel smallint,\n\t\t\tsensor varchar,\n\t\t\tlabel varchar,\n\t\t\txml_url varchar,\n\t\t\tcsv_url varchar,\n\t\t\tlatest_date date,\n\t\t\tPRIMARY KEY (collection, level, sensor)\n\t\t"
+            },
+            {
+                "@process_id": "create_table",
+                "parameters": {
+                    "@db": "karttur",
+                    "@schema": "landsat",
+                    "@table": "q_order"
+                },
+                "overwrite": "N",
+                "delete": "N",
+                "command": "\n\t\t\tcode varchar,\n\t\t\trank smallint,\n\t\t\tPRIMARY KEY (code)\n\t\t"
+            },
+            {
+                "@process_id": "table_insert",
+                "parameters": {
+                    "@db": "karttur",
+                    "@schema": "landsat",
+                    "@table": "q_order"
+                },
+                "overwrite": "N",
+                "delete": "N",
+                "command": {
+                    "columns": "code, rank",
+                    "values": [
+                        "'',0",
+                        "'FF',0",
+                        "'-9',0",
+                        "'-99',0",
+                        "'PR',10",
+                        "'L1G',20",
+                        "'L1GS',30",
+                        "'L1GT',40",
+                        "'L1T',50",
+                        "'L1TP',60",
+                        "'PC',5",
+                        "'01',10",
+                        "'02',20",
+                        "'RT',1",
+                        "'T1',20",
+                        "'T2',15",
+                        "'T3',10",
+                        "'T4',5"
+                    ]
+                }
+            }
+        ]
+    }
+}

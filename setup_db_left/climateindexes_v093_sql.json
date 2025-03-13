@@ -1,0 +1,37 @@
+{
+  "process": [
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "climate_index",
+        "table": "clim_index",
+        "command": [
+          "index TEXT NOT NULL",
+          "acquisition_date date",
+          "acquisition_date_str char(6)",
+          "value real",
+          "PRIMARY KEY (index, acquisition_date)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "climate_index",
+        "table": "index_meta",
+        "command": [
+          "index TEXT NOT NULL",
+          "type TEXT NOT NULL",
+          "source TEXT NOT NULL",
+          "url TEXT NOT NULL",
+          "latest_update_date DATE DEFAULT CURRENT_DATE",
+          "PRIMARY KEY (index)"
+        ]
+      }
+    }
+  ]
+}

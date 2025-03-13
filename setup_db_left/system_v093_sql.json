@@ -1,0 +1,165 @@
+{
+  "process": [
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "system",
+        "table": "region_cats",
+        "command": [
+          "stratum smallint",
+          "region_cat varchar",
+          "parent_cat varchar",
+          "title varchar",
+          "label varchar",
+          "PRIMARY KEY (region_cat, stratum)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "system",
+        "table": "def_regions",
+        "command": [
+          "region_cat varchar NOT NULL",
+          "region_id varchar",
+          "region_name varchar",
+          "parent_id varchar NOT NULL",
+          "title TEXT",
+          "label TEXT",
+          "PRIMARY KEY (region_cat, region_id)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "system",
+        "table": "regions",
+        "command": [
+          "region_cat varchar",
+          "region_id varchar",
+          "region_type char(1)",
+          "epsg smallint",
+          "ul_lat double precision",
+          "ul_lon double precision",
+          "ur_lat double precision",
+          "ur_lon double precision",
+          "lr_lat double precision",
+          "lr_lon double precision",
+          "ll_lat double precision",
+          "ll_lon double precision",
+          "min_x double precision",
+          "min_y double precision",
+          "max_x double precision",
+          "max_y double precision",
+          "PRIMARY KEY (region_id)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "system",
+        "table": "region_swrs",
+        "command": [
+          "region_id varchar",
+          "region_type char(1)",
+          "wrs char(1)",
+          "dir char(1) DEFAULT 'D'",
+          "wrs_path smallint",
+          "wrs_row smallint",
+          "PRIMARY KEY (region_id, wrs, wrs_path, wrs_row, dir)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "system",
+        "table": "regions_modis",
+        "command": [
+          "region_id varchar",
+          "region_type char(1)",
+          "h_tile smallint",
+          "v_tile smallint",
+          "PRIMARY KEY (region_id, h_tile, v_tile)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "system",
+        "table": "regions_sentinel",
+        "command": [
+          "region_id varchar",
+          "region_type char(1)",
+          "utm_zone integer",
+          "mgrs_id varchar",
+          "PRIMARY KEY (region_id, utm_zone, mgrs_id)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "system",
+        "table": "region_sease2n",
+        "command": [
+          "region_id varchar",
+          "region_type char(1)",
+          "x_tile smallint",
+          "y_tile smallint",
+          "PRIMARY KEY (region_id, x_tile, y_tile)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "system",
+        "table": "region_sease2s",
+        "command": [
+          "region_id varchar",
+          "region_type char(1)",
+          "x_tile smallint",
+          "y_tile smallint",
+          "PRIMARY KEY (region_id, x_tile, y_tile)"
+        ]
+      }
+    },
+    {
+      "process_id": "create_table",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "system",
+        "table": "region_sease2t",
+        "command": [
+          "region_id varchar",
+          "region_type char(1)",
+          "x_tile smallint",
+          "y_tile smallint",
+          "PRIMARY KEY (region_id, x_tile, y_tile)"
+        ]
+      }
+    }
+  ]
+}

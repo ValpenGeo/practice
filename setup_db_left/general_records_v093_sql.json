@@ -1,0 +1,776 @@
+{
+  "process": [
+    {
+      "process_id": "table_insert",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "process",
+        "table": "root_processes",
+        "command": {
+          "columns": [
+            "root_proc_id",
+            "title",
+            "label",
+            "creator"
+          ],
+          "values": [
+            [
+              "'manage_process'",
+              "'Manage database defined process'",
+              "'Mangaging a processes requires data on all parameters and their type and default values'",
+              "'thomasg'"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "process_id": "table_insert",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "process",
+        "table": "sub_processes",
+        "command": {
+          "columns": [
+            "root_proc_id",
+            "sub_proc_id",
+            "version",
+            "min_user_stratum",
+            "title",
+            "label",
+            "creator",
+            "access"
+          ],
+          "values": [
+            [
+              "'manage_process'",
+              "'add_root_proc'",
+              "'0.8.0'",
+              "10",
+              "'Add root process to database'",
+              "'Root processes are contianers for processes having similar input/output requirements'",
+              "'thomasg'",
+              "'public'"
+            ],
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "6",
+              "'Add sub process to database'",
+              "'Adding a sub processes requires data on all parameters and their type and default values'",
+              "'thomasg'",
+              "'public'"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "process_id": "table_insert",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "process",
+        "table": "process_params",
+        "command": {
+          "columns": [
+            "root_proc_id",
+            "sub_proc_id",
+            "version",
+            "parent",
+            "element",
+            "param_id",
+            "param_typ",
+            "required",
+            "default_value",
+            "hint"
+          ],
+          "values": [
+            [
+              "'manage_process'",
+              "'add_root_proc'",
+              "'0.8.0'",
+              "'process'",
+              "'parameters'",
+              "'root_proc_id'",
+              "'text'",
+              "'True'",
+              "''",
+              "'Root process id'"
+            ],
+            [
+              "'manage_process'",
+              "'add_root_proc'",
+              "'0.8.0'",
+              "'process'",
+              "'parameters'",
+              "'title'",
+              "'text'",
+              "'False'",
+              "''",
+              "'Process title'"
+            ],
+            [
+              "'manage_process'",
+              "'add_root_proc'",
+              "'0.8.0'",
+              "'process'",
+              "'parameters'",
+              "'label'",
+              "'text'",
+              "'False'",
+              "''",
+              "'Process label'"
+            ],
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "'process'",
+              "'parameters'",
+              "'root_proc_id'",
+              "'text'",
+              "'True'",
+              "''",
+              "'Root process id'"
+            ],
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "'process'",
+              "'parameters'",
+              "'sub_proc_id'",
+              "'text'",
+              "'True'",
+              "''",
+              "'Sub process id'"
+            ],
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "'process'",
+              "'parameters'",
+              "'version'",
+              "'text'",
+              "'True'",
+              "''",
+              "'Process version'"
+            ],
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "'process'",
+              "'parameters'",
+              "'min_user_stratum'",
+              "'integer'",
+              "'True'",
+              "'1'",
+              "'minimum user stratum for using the process'"
+            ],
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "'process'",
+              "'parameters'",
+              "'title'",
+              "'text'",
+              "'False'",
+              "''",
+              "'Process title'"
+            ],
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "'process'",
+              "'parameters'",
+              "'label'",
+              "'text'",
+              "'False'",
+              "''",
+              "'Process label'"
+            ],
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "'process'",
+              "'system'",
+              "'proc_sys'",
+              "'text'",
+              "'True'",
+              "''",
+              "'Process system parent'"
+            ],
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "'system'",
+              "'proc_sys'",
+              "'system'",
+              "'text'",
+              "'True'",
+              "''",
+              "'Process system'"
+            ],
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "'system'",
+              "'proc_sys'",
+              "'src_system'",
+              "'text'",
+              "'True'",
+              "''",
+              "'Process source system'"
+            ],
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "'system'",
+              "'proc_sys'",
+              "'dst_system'",
+              "'text'",
+              "'True'",
+              "''",
+              "'Process destination system'"
+            ],
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "'system'",
+              "'proc_sys'",
+              "'src_division'",
+              "'text'",
+              "'True'",
+              "''",
+              "'Process source division'"
+            ],
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "'system'",
+              "'proc_sys'",
+              "'dst_division'",
+              "'text'",
+              "'True'",
+              "''",
+              "'Process destination division'"
+            ],
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "'process'",
+              "'node'",
+              "'parameter'",
+              "'element'",
+              "'True'",
+              "''",
+              "'Process node (parameter defintion)'"
+            ],
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "'process'",
+              "'node'",
+              "'parent'",
+              "'text'",
+              "'True'",
+              "''",
+              "'Process node parent'"
+            ],
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "'process'",
+              "'node'",
+              "'element'",
+              "'text'",
+              "'True'",
+              "''",
+              "'Process node element'"
+            ],
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "'node'",
+              "'parameter'",
+              "'param_id'",
+              "'text'",
+              "'True'",
+              "''",
+              "'Process node parameter id'"
+            ],
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "'node'",
+              "'parameter'",
+              "'param_typ'",
+              "'text'",
+              "'True'",
+              "''",
+              "'Process node parameter type'"
+            ],
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "'node'",
+              "'parameter'",
+              "'required'",
+              "'text'",
+              "'True'",
+              "''",
+              "'Boolean variable defining if parameter is required or not'"
+            ],
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "'node'",
+              "'parameter'",
+              "'default_value'",
+              "'text'",
+              "'True'",
+              "''",
+              "'Parameter default value'"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "process_id": "table_insert",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "process",
+        "table": "process_params",
+        "command": {
+          "columns": [
+            "root_proc_id",
+            "sub_proc_id",
+            "version",
+            "parent",
+            "element",
+            "param_id",
+            "param_typ",
+            "required",
+            "default_value",
+            "hint"
+          ],
+          "values": [
+            [
+              "'all'",
+              "'userproj'",
+              "'0.8.0'",
+              "'root'",
+              "'userproj'",
+              "'user_id'",
+              "'text'",
+              "'False'",
+              "'view'",
+              "'User id'"
+            ],
+            [
+              "'all'",
+              "'userproj'",
+              "'0.8.0'",
+              "'root'",
+              "'userproj'",
+              "'projectid'",
+              "'text'",
+              "'False'",
+              "'view'",
+              "'User project'"
+            ],
+            [
+              "'all'",
+              "'userproj'",
+              "'0.8.0'",
+              "'root'",
+              "'userproj'",
+              "'user_pswd'",
+              "'text'",
+              "'False'",
+              "''",
+              "'User password'"
+            ],
+            [
+              "'all'",
+              "'userproj'",
+              "'0.8.0'",
+              "'root'",
+              "'userproj'",
+              "'tract_id'",
+              "'text'",
+              "'False'",
+              "'*'",
+              "'User project tract id'"
+            ],
+            [
+              "'all'",
+              "'userproj'",
+              "'0.8.0'",
+              "'root'",
+              "'userproj'",
+              "'site_id'",
+              "'text'",
+              "'False'",
+              "'*'",
+              "'User project site id'"
+            ],
+            [
+              "'all'",
+              "'userproj'",
+              "'0.8.0'",
+              "'root'",
+              "'userproj'",
+              "'plot_id'",
+              "'text'",
+              "'False'",
+              "'*'",
+              "'User project plot id'"
+            ],
+            [
+              "'all'",
+              "'userproj'",
+              "'0.8.0'",
+              "'root'",
+              "'userproj'",
+              "'system'",
+              "'text'",
+              "'True'",
+              "''",
+              "'User project system'"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "process_id": "table_insert",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "process",
+        "table": "process_param_set_values",
+        "command": {
+          "columns": [
+            "root_proc_id",
+            "sub_proc_id",
+            "version",
+            "param_id",
+            "parent",
+            "element",
+            "value",
+            "label"
+          ],
+          "values": [
+            [
+              "'all'",
+              "'userproj'",
+              "'0.8.0'",
+              "'system'",
+              "'userproj'",
+              "'system'",
+              "'system'",
+              "'system'"
+            ],
+            [
+              "'all'",
+              "'userproj'",
+              "'0.8.0'",
+              "'system'",
+              "'userproj'",
+              "'system'",
+              "'ancillary'",
+              "'ancillary'"
+            ],
+            [
+              "'all'",
+              "'userproj'",
+              "'0.8.0'",
+              "'system'",
+              "'userproj'",
+              "'system'",
+              "'region'",
+              "'region'"
+            ],
+            [
+              "'all'",
+              "'userproj'",
+              "'0.8.0'",
+              "'system'",
+              "'userproj'",
+              "'system'",
+              "'modis'",
+              "'modis'"
+            ],
+            [
+              "'all'",
+              "'userproj'",
+              "'0.8.0'",
+              "'system'",
+              "'userproj'",
+              "'system'",
+              "'landsat'",
+              "'landsat'"
+            ],
+            [
+              "'all'",
+              "'userproj'",
+              "'0.8.0'",
+              "'system'",
+              "'userproj'",
+              "'system'",
+              "'user'",
+              "'user'"
+            ],
+            [
+              "'all'",
+              "'userproj'",
+              "'0.8.0'",
+              "'system'",
+              "'userproj'",
+              "'system'",
+              "'specimen'",
+              "'specimen'"
+            ],
+            [
+              "'all'",
+              "'userproj'",
+              "'0.8.0'",
+              "'system'",
+              "'userproj'",
+              "'system'",
+              "'topo'",
+              "'topo'"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "process_id": "table_insert",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "process",
+        "table": "process_param_set_values",
+        "command": {
+          "columns": [
+            "root_proc_id",
+            "sub_proc_id",
+            "version",
+            "param_id",
+            "parent",
+            "element",
+            "value",
+            "label"
+          ],
+          "values": [
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "'param_typ'",
+              "'node'",
+              "'parameter'",
+              "'text'",
+              "'text o rstring'"
+            ],
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "'param_typ'",
+              "'node'",
+              "'parameter'",
+              "'real'",
+              "'real number'"
+            ],
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "'param_typ'",
+              "'node'",
+              "'parameter'",
+              "'int'",
+              "'integer number'"
+            ],
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "'param_typ'",
+              "'node'",
+              "'parameter'",
+              "'intlist'",
+              "'list of integer numbers'"
+            ],
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "'param_typ'",
+              "'node'",
+              "'parameter'",
+              "'textlist'",
+              "'list of text strings'"
+            ],
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "'param_typ'",
+              "'node'",
+              "'parameter'",
+              "'bool'",
+              "'boolean'"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "process_id": "table_insert",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "process",
+        "table": "process_param_set_values",
+        "command": {
+          "columns": [
+            "root_proc_id",
+            "sub_proc_id",
+            "version",
+            "param_id",
+            "parent",
+            "element",
+            "value",
+            "label"
+          ],
+          "values": [
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "'param_typ'",
+              "'node'",
+              "'parameter'",
+              "'text'",
+              "'text or string'"
+            ],
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "'param_typ'",
+              "'node'",
+              "'parameter'",
+              "'real'",
+              "'real number'"
+            ],
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "'param_typ'",
+              "'node'",
+              "'parameter'",
+              "'int'",
+              "'integer number'"
+            ],
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "'param_typ'",
+              "'node'",
+              "'parameter'",
+              "'intlist'",
+              "'list of integer numbers'"
+            ],
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "'param_typ'",
+              "'node'",
+              "'parameter'",
+              "'textlist'",
+              "'list of text strings'"
+            ],
+            [
+              "'manage_process'",
+              "'add_sub_proc'",
+              "'0.8.0'",
+              "'param_typ'",
+              "'node'",
+              "'parameter'",
+              "'bool'",
+              "'boolean'"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "process_id": "table_insert",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "schema": "process",
+        "table": "proc_sys",
+        "command": {
+          "columns": [
+            "sub_proc_id",
+            "system",
+            "src_system",
+            "dst_system",
+            "src_division",
+            "dst_division"
+          ],
+          "values": [
+            [
+              "'add_root_proc'",
+              "'system'",
+              "'NA'",
+              "'NA'",
+              "'NA'",
+              "'NA'"
+            ],
+            [
+              "'add_sub_proc'",
+              "'system'",
+              "'NA'",
+              "'NA'",
+              "'NA'",
+              "'NA'"
+            ]
+          ]
+        }
+      }
+    }
+  ]
+}

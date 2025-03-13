@@ -8,15 +8,15 @@
         "schema": "user_locale",
         "table": "users",
         "command": [
-          "user_nr bigserial",
-          "user_id TEXT",
-          "user_pswd varchar",
+          "user_number bigserial",
+          "user_id text",
+          "user_password varchar",
           "first_name varchar",
           "middle_name varchar",
           "last_name varchar",
           "address_name varchar",
           "title varchar",
-          "user_title char(1) DEFAULT 'N'",
+          "user_title char(1) default 'N'",
           "country char(2)",
           "state varchar",
           "address_1 varchar",
@@ -29,11 +29,11 @@
           "mobile varchar",
           "organization varchar",
           "department varchar",
-          "org_unit varchar",
+          "organization_unit varchar",
           "position varchar",
-          "user_cat varchar",
+          "user_category varchar",
           "stratum smallint",
-          "PRIMARY KEY (user_id)"
+          "primary_key (user_id)"
         ]
       }
     },
@@ -45,21 +45,21 @@
         "schema": "user_locale",
         "table": "organisations",
         "command": [
-          "inst_id TEXT",
-          "inst_name varchar NOT NULL",
-          "inst_url varchar",
-          "inst_email varchar",
-          "inst_address_1 varchar",
-          "inst_address_2 varchar",
-          "inst_city varchar",
-          "inst_zip varchar",
-          "inst_state varchar",
-          "inst_country_id CHAR(2)",
-          "inst_tel varchar",
-          "inst_fax varchar",
-          "access_date DATE DEFAULT CURRENT_DATE",
+          "institution_id text",
+          "institution_name varchar not null",
+          "institution_url varchar",
+          "institution_email varchar",
+          "institution_address_1 varchar",
+          "institution_address_2 varchar",
+          "institution_city varchar",
+          "institution_zip varchar",
+          "institution_state varchar",
+          "institution_country_id char(2)",
+          "institution_tel varchar",
+          "institution_fax varchar",
+          "access_date date default current_date",
           "status varchar",
-          "PRIMARY KEY(inst_id)"
+          "primary_key(institution_id)"
         ]
       }
     },
@@ -71,10 +71,10 @@
         "schema": "user_locale",
         "table": "theme_ids",
         "command": [
-          "theme_id INTEGER NOT NULL",
-          "theme varchar NOT NULL",
+          "theme_id INTEGER not null",
+          "theme varchar not null",
           "status varchar",
-          "PRIMARY KEY(theme_id)"
+          "primary_key(theme_id)"
         ]
       }
     },
@@ -84,34 +84,34 @@
       "delete": false,
       "parameters": {
         "schema": "user_locale",
-        "table": "user_cats",
+        "table": "user_categorys",
         "command": [
-          "user_cat varchar",
-          "stratum integer NOT NULL",
+          "user_category varchar",
+          "stratum integer not null",
           "title varchar",
           "label varchar",
-          "descript TEXT",
-          "save_view char(1) DEFAULT 'Y'",
+          "description text",
+          "save_view char(1) default 'Y'",
           "share_view char(1) DefAULT 'Y'",
-          "layout char(1) DEFAULT 'Y'",
-          "save_layout char(1) DEFAULT 'Y'",
+          "layout char(1) default 'Y'",
+          "save_layout char(1) default 'Y'",
           "share_layout char(1) DefAULT 'Y'",
-          "max_def_region varchar DEFAULT 'country'",
-          "max_tracts integer DEFAULT 0",
-          "max_sites integer DEFAULT 0",
-          "max_samples integer DEFAULT 0",
-          "max_scenes integer DEFAULT 0",
-          "model_cal char(1) DEFAULT 'N'",
-          "model_form char(1) DEFAULT 'N'",
-          "model_save char(1) DEFAULT 'N'",
-          "model_share char(1) DEFAULT 'N'",
-          "ancil_add char(1) DEFAULT 'N'",
-          "max_ancil INTEGER DEFAULT 0",
-          "screen_dig char(1) DEFAULT 'Y'",
-          "layer_extract char(1) DEFAULT 'Y'",
-          "region_cell_max INTEGER DEFAULT 512",
-          "max_MB integer DEFAULT 1",
-          "PRIMARY KEY (user_cat)"
+          "max_def_region varchar default 'country'",
+          "max_tracts integer default 0",
+          "max_sites integer default 0",
+          "max_samples integer default 0",
+          "max_scenes integer default 0",
+          "model_cal char(1) default 'N'",
+          "model_form char(1) default 'N'",
+          "model_save char(1) default 'N'",
+          "model_share char(1) default 'N'",
+          "ancillary_add char(1) default 'N'",
+          "max_ancillary INTEGER default 0",
+          "screen_dig char(1) default 'Y'",
+          "layer_extract char(1) default 'Y'",
+          "region_cell_max INTEGER default 512",
+          "max_MB integer default 1",
+          "primary_key (user_category)"
         ]
       }
     },
@@ -121,10 +121,10 @@
       "delete": false,
       "parameters": {
         "schema": "user_locale",
-        "table": "user_cats",
+        "table": "user_categorys",
         "command": {
           "columns": [
-            "user_cat",
+            "user_category",
             "stratum",
             "title",
             "label",
@@ -137,8 +137,8 @@
             "model_form",
             "model_save",
             "model_share",
-            "ancil_add",
-            "max_ancil",
+            "ancillary_add",
+            "max_ancillary",
             "screen_dig",
             "layer_extract",
             "region_cell_max",
@@ -365,11 +365,11 @@
       "delete": false,
       "parameters": {
         "schema": "system",
-        "table": "region_cats",
+        "table": "region_categories",
         "command": {
           "columns": [
-            "region_cat",
-            "parent_cat",
+            "region_category",
+            "parent_category",
             "stratum",
             "title",
             "label"
@@ -392,10 +392,10 @@
       "delete": false,
       "parameters": {
         "schema": "system",
-        "table": "def_regions",
+        "table": "definition_regions",
         "command": {
           "columns": [
-            "region_cat",
+            "region_category",
             "region_id",
             "region_name",
             "parent_id",
@@ -424,7 +424,7 @@
         "table": "regions",
         "command": {
           "columns": [
-            "region_cat",
+            "region_category",
             "region_id",
             "region_type",
             "epsg",

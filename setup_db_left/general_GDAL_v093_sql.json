@@ -12,7 +12,7 @@
           "arr char(1)",
           "np varchar",
           "usgs varchar",
-          "PRIMARY KEY (gdal)"
+          "primary_key (gdal)"
         ]
       }
     },
@@ -88,7 +88,7 @@
           "hdr varchar",
 		    	"dat varchar",
 		    	"gdal_driver varchar",
-		    	"PRIMARY KEY (hdr, dat, gdal_driver)"
+		    	"primary_key (hdr, dat, gdal_driver)"
         ]
       }
     },

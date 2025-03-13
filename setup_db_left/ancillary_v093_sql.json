@@ -6,11 +6,11 @@
       "delete": false,
       "parameters": {
         "schema": "ancillary",
-        "table": "dataset_comp_id",
+        "table": "dataset_composition_id",
         "command": [
-          "dataset_id TEXT",
-          "comp_id TEXT",
-          "PRIMARY KEY (dataset_id, comp_id)"
+          "dataset_id text",
+          "composition_id text",
+          "primary_key (dataset_id, composition_id)"
         ]
       }
     },
@@ -22,20 +22,20 @@
         "schema": "ancillary",
         "table": "dataset",
         "command": [
-          "dataset_id TEXT NOT NULL",
-          "dataset_version varchar NOT NULL",
-          "dataset_name varchar NOT NULL",
-          "org_id TEXT NOT NULL",
-          "region_id varchar NOT NULL",
+          "dataset_id text not null",
+          "dataset_version varchar not null",
+          "dataset_name varchar not null",
+          "organisation_id text not null",
+          "region_id varchar not null",
           "title varchar",
           "label varchar",
           "data_url varchar",
           "meta_url varchar",
-          "access_date DATE DEFAULT CURRENT_DATE DEFAULT CURRENT_DATE DEFAULT CURRENT_DATE",
-          "copyright TEXT",
-          "start_date DATE",
-          "end_date DATE",
-          "PRIMARY KEY(dataset_id)"
+          "access_date date default current_date default current_date default current_date",
+          "copyright text",
+          "start_date date",
+          "end_date date",
+          "primary_key(dataset_id)"
         ]
       }
     },
@@ -47,14 +47,14 @@
         "schema": "ancillary",
         "table": "dataset_layer",
         "command": [
-          "dataset_id TEXT",
-          "data_directory TEXT",
-          "data_file TEXT",
+          "dataset_id text",
+          "data_directory text",
+          "data_file text",
           "data_file_type varchar",
-          "metadir TEXT",
+          "meta_directory text",
           "theme varchar",
           "sub_theme varchar",
-          "PRIMARY KEY(dataset_id, data_directory, data_file)"
+          "primary_key(dataset_id, data_directory, data_file)"
         ]
       }
     },
@@ -66,19 +66,19 @@
         "schema": "ancillary",
         "table": "author",
         "command": [
-          "inst_id TEXT",
-          "author_id TEXT",
-          "author_url TEXT",
-          "author_email TEXT",
+          "institution_id text",
+          "author_id text",
+          "author_url text",
+          "author_email text",
           "author_address_1 varchar",
           "author_address_2 varchar",
           "author_city varchar",
           "author_zip varchar",
           "author_state varchar",
-          "author_country_id CHAR(2)",
+          "author_country_id char(2)",
           "author_tel varchar",
           "author_fax varchar",
-          "PRIMARY KEY(inst_id, author_id)"
+          "primary_key(institution_id, author_id)"
         ]
       }
     }

@@ -13,7 +13,7 @@
           "mgrs char(5)",
           "utm smallint",
           "mgrs_id char(3)",
-          "PRIMARY KEY (region_id, mgrs_id)"
+          "primary_key (region_id, mgrs_id)"
         ]
       }
     },
@@ -29,7 +29,7 @@
           "region_type varchar",
           "h_tile smallint",
           "v_tile smallint",
-          "PRIMARY KEY (region_id, h_tile, v_tile)"
+          "primary_key (region_id, h_tile, v_tile)"
         ]
       }
     },
@@ -48,7 +48,7 @@
           "wrs smallint",
           "direction char(1)",
           "path_row_string char(8)",
-          "PRIMARY KEY (region_id, wrs, direction, wrs_path, wrs_row)"
+          "primary_key (region_id, wrs, direction, wrs_path, wrs_row)"
         ]
       }
     },
@@ -64,7 +64,7 @@
           "region_type varchar",
           "x_tile smallint",
           "y_tile smallint",
-          "PRIMARY KEY (region_id, x_tile, y_tile)"
+          "primary_key (region_id, x_tile, y_tile)"
         ]
       }
     },
@@ -80,7 +80,7 @@
           "region_type varchar",
           "x_tile smallint",
           "y_tile smallint",
-          "PRIMARY KEY (region_id, x_tile, y_tile)"
+          "primary_key (region_id, x_tile, y_tile)"
         ]
       }
     },
@@ -96,7 +96,7 @@
           "region_type varchar",
           "x_tile smallint",
           "y_tile smallint",
-          "PRIMARY KEY (region_id, x_tile, y_tile)"
+          "primary_key (region_id, x_tile, y_tile)"
         ]
       }
     }

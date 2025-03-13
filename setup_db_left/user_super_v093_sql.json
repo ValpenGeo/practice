@@ -10,9 +10,9 @@
         "command": {
           "columns": [
             "user_id",
-            "user_pswd",
+            "user_password",
             "stratum",
-            "user_cat"
+            "user_category"
           ],
           "values": [
             [
@@ -47,7 +47,7 @@
         "command": {
           "where": "user_id = 'inGenkangiSSa'",
           "columns": [
-            "user_cat",
+            "user_category",
             "stratum"
           ],
           "values": [
@@ -67,7 +67,7 @@
         "command": {
           "where": "user_id = 'anvaendarefixaren'",
           "columns": [
-            "user_cat",
+            "user_category",
             "stratum"
           ],
           "values": [
@@ -131,8 +131,8 @@
         "table": "user_projects",
         "command": {
           "columns": [
-            "proj_id",
-            "proj_name",
+            "project_id",
+            "project_name",
             "owner",
             "creator",
             "share",
@@ -180,7 +180,7 @@
         "table": "link_proj_region",
         "command": {
           "columns": [
-            "proj_id",
+            "project_id",
             "region_id"
           ],
           "values": [

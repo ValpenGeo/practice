@@ -8,11 +8,11 @@
         "schema": "soil_moisture",
         "table": "dataset",
         "command": [
-          "datasetid TEXT NOT NULL",
-          "datasetname varchar NOT NULL",
-          "inst_id TEXT NOT NULL",
-          "region_id varchar NOT NULL",
-          "region_cat varchar NOT NULL",
+          "dataset_id text not null",
+          "dataset_name varchar not null",
+          "institution_id text not null",
+          "region_id varchar not null",
+          "region_category varchar not null",
           "title varchar",
           "label varchar",
           "data_url varchar",
@@ -20,9 +20,9 @@
           "meta_path varchar",
           "data_dir varchar",
           "data_file varchar",
-          "start_date DATE",
-          "end_date DATE",
-          "PRIMARY KEY(datasetid)"
+          "start_date date",
+          "end_date date",
+          "primary_key(dataset_id)"
         ]
       }
     },
@@ -35,8 +35,8 @@
         "table": "networks",
         "command": [
           "network_id varchar",
-          "network TEXT",
-          "PRIMARY KEY(network)"
+          "network text",
+          "primary_key(network)"
         ]
       }
     },
@@ -49,17 +49,17 @@
         "table": "stations",
         "command": [
           "network_id varchar",
-          "station_id TEXT",
+          "station_id text",
           "lat double precision",
           "lon double precision",
           "sm_min_depth float",
           "sm_max_depth float",
-          "air_temp char(1) DEFAULT 'N'",
-          "soil_temp char(1) DEFAULT 'N'",
-          "precip char(1) DEFAULT 'N'",
-          "snow_depth char(1) DEFAULT 'N'",
-          "create_date date DEFAULT CURRENT_DATE",
-          "PRIMARY KEY (station_id)"
+          "air_temp char(1) default 'N'",
+          "soil_temp char(1) default 'N'",
+          "precip char(1) default 'N'",
+          "snow_depth char(1) default 'N'",
+          "create_date date default current_date",
+          "primary_key (station_id)"
         ]
       }
     },
@@ -72,10 +72,10 @@
         "table": "daily05",
         "command": [
           "network_id varchar",
-          "station_id TEXT",
+          "station_id text",
           "datum date",
           "soil_moisture float",
-          "PRIMARY KEY (network_id, station_id, datum)"
+          "primary_key (network_id, station_id, datum)"
         ]
       }
     },
@@ -88,10 +88,10 @@
         "table": "noon05",
         "command": [
           "network_id varchar",
-          "station_id TEXT",
+          "station_id text",
           "datum date",
           "soil_moisture float",
-          "PRIMARY KEY (network_id, station_id, datum)"
+          "primary_key (network_id, station_id, datum)"
         ]
       }
     },
@@ -104,10 +104,10 @@
         "table": "am05",
         "command": [
           "network_id varchar",
-          "station_id TEXT",
+          "station_id text",
           "datum date",
           "soil_moisture float",
-          "PRIMARY KEY (network_id, station_id, datum)"
+          "primary_key (network_id, station_id, datum)"
         ]
       }
     },
@@ -120,10 +120,10 @@
         "table": "pm05",
         "command": [
           "network_id varchar",
-          "station_id TEXT",
+          "station_id text",
           "datum date",
           "soil_moisture float",
-          "PRIMARY KEY (network_id, station_id, datum)"
+          "primary_key (network_id, station_id, datum)"
         ]
       }
     },
@@ -136,10 +136,10 @@
         "table": "evening05",
         "command": [
           "network_id varchar",
-          "station_id TEXT",
+          "station_id text",
           "datum date",
           "soil_moisture float",
-          "PRIMARY KEY (network_id, station_id, datum)"
+          "primary_key (network_id, station_id, datum)"
         ]
       }
     },
@@ -152,10 +152,10 @@
         "table": "daily_max",
         "command": [
           "network_id varchar",
-          "station_id TEXT",
+          "station_id text",
           "datum date",
           "soil_moisture float",
-          "PRIMARY KEY (network_id, station_id, datum)"
+          "primary_key (network_id, station_id, datum)"
         ]
       }
     },
@@ -168,10 +168,10 @@
         "table": "noon_max",
         "command": [
           "network_id varchar",
-          "station_id TEXT",
+          "station_id text",
           "datum date",
           "soil_moisture float",
-          "PRIMARY KEY (network_id, station_id, datum)"
+          "primary_key (network_id, station_id, datum)"
         ]
       }
     },
@@ -184,10 +184,10 @@
         "table": "am_max",
         "command": [
           "network_id varchar",
-          "station_id TEXT",
+          "station_id text",
           "datum date",
           "soil_moisture float",
-          "PRIMARY KEY (network_id, station_id, datum)"
+          "primary_key (network_id, station_id, datum)"
         ]
       }
     },
@@ -200,10 +200,10 @@
         "table": "pm_max",
         "command": [
           "network_id varchar",
-          "station_id TEXT",
+          "station_id text",
           "datum date",
           "soil_moisture float",
-          "PRIMARY KEY (network_id, station_id, datum)"
+          "primary_key (network_id, station_id, datum)"
         ]
       }
     },
@@ -216,10 +216,10 @@
         "table": "evening_max",
         "command": [
           "network_id varchar",
-          "station_id TEXT",
+          "station_id text",
           "datum date",
           "soil_moisture float",
-          "PRIMARY KEY (network_id, station_id, datum)"
+          "primary_key (network_id, station_id, datum)"
         ]
       }
     }

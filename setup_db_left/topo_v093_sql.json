@@ -1,1 +1,39 @@
-{"sql": {"process": [{"@process_id": "create_table", "parameters": {"@db": "karttur", "@schema": "topography", "@table": "plot"}, "overwrite": "N", "delete": "N", "command": "\n\t\t\tplot_id bigserial,\n\t\t\tsite_id TEXT NOT NULL,\n\t\t\televation real,\n\t\t\tlon double precision,\n\t\t\tlat double precision,\n\t\t\tacquisition_date date,\n\t\t\tacquisition_time time,\n\t\t\tcomp_id TEXT,\t\t\t\n\t\t\tPRIMARY KEY(lon, lat, acquisition_date, comp_id)\n\t\t"}, {"@process_id": "create_table", "parameters": {"@db": "karttur", "@schema": "topography", "@table": "plot_wrs"}, "overwrite": "N", "delete": "N", "command": "\n\t\t\tplot_id bigint,\n \t\t\tpath smallint,\n \t\t\trow smallint,\n \t\t\twrs character(1),\n \t\t\tasc_desc character(1) DEFAULT 'D',\n \t\t\tPRIMARY KEY (plot_id, path, row, wrs, asc_desc)\n\t\t"}, {"@process_id": "create_table", "parameters": {"@db": "karttur", "@schema": "topography", "@table": "plot_mod_tile"}, "overwrite": "N", "delete": "N", "command": "\n\t\t\tplot_id bigint,\n \t\t\th smallint,\n \t\t\tv smallint,\n \t\t\tPRIMARY KEY (plot_id)\n\t\t"}]}}
+{
+  "sql": {
+    "process": [
+      {
+        "@process_id": "create_table",
+        "parameters": {
+          "@db": "karttur",
+          "@schema": "topography",
+          "@table": "plot"
+        },
+        "overwrite": "N",
+        "delete": "N",
+        "command": "\n\t\t\tplot_id bigserial,\n\t\t\tsite_id text not null,\n\t\t\televation real,\n\t\t\tlon double precision,\n\t\t\tlat double precision,\n\t\t\tacquisition_date date,\n\t\t\tacquisition_time time,\n\t\t\tcomposition_id text,\t\t\t\n\t\t\tprimary_key(lon, lat, acquisition_date, composition_id)\n\t\t"
+      },
+      {
+        "@process_id": "create_table",
+        "parameters": {
+          "@db": "karttur",
+          "@schema": "topography",
+          "@table": "plot_wrs"
+        },
+        "overwrite": "N",
+        "delete": "N",
+        "command": "\n\t\t\tplot_id bigint,\n \t\t\tpath smallint,\n \t\t\trow smallint,\n \t\t\twrs character(1),\n \t\t\tasc_desc character(1) default 'D',\n \t\t\tprimary_key (plot_id, path, row, wrs, asc_desc)\n\t\t"
+      },
+      {
+        "@process_id": "create_table",
+        "parameters": {
+          "@db": "karttur",
+          "@schema": "topography",
+          "@table": "plot_mod_tile"
+        },
+        "overwrite": "N",
+        "delete": "N",
+        "command": "\n\t\t\tplot_id bigint,\n \t\t\th smallint,\n \t\t\tv smallint,\n \t\t\tprimary_key (plot_id)\n\t\t"
+      }
+    ]
+  }
+}

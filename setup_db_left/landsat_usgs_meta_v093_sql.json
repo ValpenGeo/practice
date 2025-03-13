@@ -10,7 +10,7 @@
                 },
                 "overwrite": "N",
                 "delete": "N",
-                "command": "\n\t\t\tid SERIAL PRIMARY KEY,\n\t\t\tscene_id character(21),\n\t\t\tcopy_file varchar\n\t\t"
+                "command": "\n\t\t\tid SERIAL primary_key,\n\t\t\tscene_id character(21),\n\t\t\tcopy_file varchar\n\t\t"
             },
             {
                 "@process_id": "create_table",
@@ -21,7 +21,7 @@
                 },
                 "overwrite": "N",
                 "delete": "N",
-                "command": "\n\t\t\tid SERIAL PRIMARY KEY,\n\t\t\tscene_id character(21),\n\t\t\tcopy_file varchar\n\t\t"
+                "command": "\n\t\t\tid SERIAL primary_key,\n\t\t\tscene_id character(21),\n\t\t\tcopy_file varchar\n\t\t"
             },
             {
                 "@process_id": "create_table",
@@ -32,7 +32,7 @@
                 },
                 "overwrite": "N",
                 "delete": "N",
-                "command": "\n\t\t\tid SERIAL PRIMARY KEY,\n\t\t\tscene_id character(21),\n\t\t\tcopy_file varchar\n\t\t"
+                "command": "\n\t\t\tid SERIAL primary_key,\n\t\t\tscene_id character(21),\n\t\t\tcopy_file varchar\n\t\t"
             },
             {
                 "@process_id": "create_table",
@@ -43,7 +43,7 @@
                 },
                 "overwrite": "N",
                 "delete": "N",
-                "command": "\n\t\t\tid SERIAL PRIMARY KEY,\n\t\t\tscene_id character(21),\n\t\t\tcopy_file varchar\n\t\t"
+                "command": "\n\t\t\tid SERIAL primary_key,\n\t\t\tscene_id character(21),\n\t\t\tcopy_file varchar\n\t\t"
             },
             {
                 "@process_id": "create_table",
@@ -54,7 +54,7 @@
                 },
                 "overwrite": "N",
                 "delete": "N",
-                "command": "\n\t\t\tid SERIAL PRIMARY KEY,\n\t\t\tscene_id character(21),\n\t\t\tcopy_file varchar\n\t\t"
+                "command": "\n\t\t\tid SERIAL primary_key,\n\t\t\tscene_id character(21),\n\t\t\tcopy_file varchar\n\t\t"
             },
             {
                 "@process_id": "create_table",
@@ -65,7 +65,7 @@
                 },
                 "overwrite": "N",
                 "delete": "N",
-                "command": "\n\t\t\tscene_id character(21),\n\t\t\tcollection smallint,\n\t\t\ttier char(2),\n\t\t\tdownloaded char(1),\n\t\t\torganized char(1),\n\t\t\texplolded char(1),\n\t\t\tPRIMARY KEY (scene_id, collection, tier)\n\t\t"
+                "command": "\n\t\t\tscene_id character(21),\n\t\t\tcollection smallint,\n\t\t\ttier char(2),\n\t\t\tdownloaded char(1),\n\t\t\torganized char(1),\n\t\t\texplolded char(1),\n\t\t\tprimary_key (scene_id, collection, tier)\n\t\t"
             },
             {
                 "@process_id": "create_table",
@@ -76,7 +76,7 @@
                 },
                 "overwrite": "N",
                 "delete": "N",
-                "command": "\n\t\t\tsensor varchar,\n\t\t\tcsv_header varchar,\n\t\t\txml_parent_id varchar,\n\t\t\txml_element varchar,\n\t\t\tmeta_table varchar,\n\t\t\tmeta_column varchar,\n\t\t\tmeta_type  varchar,\n\t\t\tmeta_length integer,\n\t\t\trequired char(1),\n\t\t\tdefault_value varchar,\n\t\t\tPRIMARY KEY (sensor, meta_column)\n\t\t"
+                "command": "\n\t\t\tsensor varchar,\n\t\t\tcsv_header varchar,\n\t\t\txml_parent_id varchar,\n\t\t\txml_element varchar,\n\t\t\tmeta_table varchar,\n\t\t\tmeta_column varchar,\n\t\t\tmeta_type  varchar,\n\t\t\tmeta_length integer,\n\t\t\trequired char(1),\n\t\t\tdefault_value varchar,\n\t\t\tprimary_key (sensor, meta_column)\n\t\t"
             },
             {
                 "@process_id": "create_table",
@@ -87,7 +87,7 @@
                 },
                 "overwrite": "N",
                 "delete": "N",
-                "command": "\n\t\t\tcollection varchar,\n\t\t\tlevel smallint,\n\t\t\tsensor varchar,\n\t\t\tlabel varchar,\n\t\t\txml_url varchar,\n\t\t\tcsv_url varchar,\n\t\t\tlatest_date date,\n\t\t\tPRIMARY KEY (collection, level, sensor)\n\t\t"
+                "command": "\n\t\t\tcollection varchar,\n\t\t\tlevel smallint,\n\t\t\tsensor varchar,\n\t\t\tlabel varchar,\n\t\t\txml_url varchar,\n\t\t\tcsv_url varchar,\n\t\t\tlatest_date date,\n\t\t\tprimary_key (collection, level, sensor)\n\t\t"
             },
             {
                 "@process_id": "create_table",
@@ -98,7 +98,7 @@
                 },
                 "overwrite": "N",
                 "delete": "N",
-                "command": "\n\t\t\tcode varchar,\n\t\t\trank smallint,\n\t\t\tPRIMARY KEY (code)\n\t\t"
+                "command": "\n\t\t\tcode varchar,\n\t\t\trank smallint,\n\t\t\tprimary_key (code)\n\t\t"
             },
             {
                 "@process_id": "table_insert",

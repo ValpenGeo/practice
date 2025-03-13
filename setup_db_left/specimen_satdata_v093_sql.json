@@ -1,1 +1,61 @@
-{"sql": {"process": [{"@process_id": "create_table", "parameters": {"@db": "karttur", "@schema": "specimen", "@table": "scene"}, "overwrite": "N", "delete": "N", "command": "\n\t\t\timage_id bigserial,\t\n\t\t\tscene_id TEXT NOT NULL,\t\n\t\t\tsource TEXT NOT NULL,\t\n\t\t\tproduct TEXT,\n\t\t\tfolder TEXT,\n\t\t\tacquisition_date_str varchar,\n\t\t\tacquisition_date date,\n\t\t\tpath smallint,\n\t\t\trow smallint,\n    \t\tcreate_date date DEFAULT CURRENT_DATE,\n    \t\tPRIMARY KEY (source, product, folder, acquisition_date_str, path, row)\t\n\t\t"}, {"@process_id": "create_table", "parameters": {"@db": "karttur", "@schema": "specimen", "@table": "scene_plot"}, "overwrite": "N", "delete": "N", "command": "\n\t\t\timage_id bigint,\n\t\t\tplot_id TEXT,\t\n            status char(1) NOT NULL,\n            neighbors smallint,\n    \t\tPRIMARY KEY (image_id, plot_id)\t\n\t\t"}, {"@process_id": "create_table", "parameters": {"@db": "karttur", "@schema": "specimen", "@table": "pt_srfi"}, "overwrite": "N", "delete": "N", "command": "\n\t\t\timage_id bigint,\n\t\t\tplot_id TEXT,\t\n            band varchar,\n            srfi integer,\n    \t\tPRIMARY KEY (image_id, plot_id, band)\t\n\t\t"}, {"@process_id": "create_table", "parameters": {"@db": "karttur", "@schema": "specimen", "@table": "plot_srfi"}, "overwrite": "N", "delete": "N", "command": "\n\t\t\timage_id bigint,\n\t\t\tplot_id TEXT,\t\n            band varchar,\n            srfi integer,\n    \t\tPRIMARY KEY (image_id, plot_id, band)\t\n\t\t"}, {"@process_id": "create_table", "parameters": {"@db": "karttur", "@schema": "specimen", "@table": "kernel_srfi"}, "overwrite": "N", "delete": "N", "command": "\n\t\t\timage_id bigint,\n\t\t\tplot_id TEXT,\t\n            band varchar,\n            srfi integer,\n            srfi_std integer,\n    \t\tPRIMARY KEY (image_id, plot_id, band)\t\n\t\t"}]}}
+{
+  "sql": {
+    "process": [
+      {
+        "@process_id": "create_table",
+        "parameters": {
+          "@db": "karttur",
+          "@schema": "specimen",
+          "@table": "scene"
+        },
+        "overwrite": "N",
+        "delete": "N",
+        "command": "\n\t\t\timage_id bigserial,\t\n\t\t\tscene_id text not null,\t\n\t\t\tsource text not null,\t\n\t\t\tproduct text,\n\t\t\tfolder text,\n\t\t\tacquisition_date_str varchar,\n\t\t\tacquisition_date date,\n\t\t\tpath smallint,\n\t\t\trow smallint,\n    \t\tcreate_date date default current_date,\n    \t\tprimary_key (source, product, folder, acquisition_date_str, path, row)\t\n\t\t"
+      },
+      {
+        "@process_id": "create_table",
+        "parameters": {
+          "@db": "karttur",
+          "@schema": "specimen",
+          "@table": "scene_plot"
+        },
+        "overwrite": "N",
+        "delete": "N",
+        "command": "\n\t\t\timage_id bigint,\n\t\t\tplot_id text,\t\n            status char(1) not null,\n            neighbors smallint,\n    \t\tprimary_key (image_id, plot_id)\t\n\t\t"
+      },
+      {
+        "@process_id": "create_table",
+        "parameters": {
+          "@db": "karttur",
+          "@schema": "specimen",
+          "@table": "pt_srfi"
+        },
+        "overwrite": "N",
+        "delete": "N",
+        "command": "\n\t\t\timage_id bigint,\n\t\t\tplot_id text,\t\n            band varchar,\n            srfi integer,\n    \t\tprimary_key (image_id, plot_id, band)\t\n\t\t"
+      },
+      {
+        "@process_id": "create_table",
+        "parameters": {
+          "@db": "karttur",
+          "@schema": "specimen",
+          "@table": "plot_srfi"
+        },
+        "overwrite": "N",
+        "delete": "N",
+        "command": "\n\t\t\timage_id bigint,\n\t\t\tplot_id text,\t\n            band varchar,\n            srfi integer,\n    \t\tprimary_key (image_id, plot_id, band)\t\n\t\t"
+      },
+      {
+        "@process_id": "create_table",
+        "parameters": {
+          "@db": "karttur",
+          "@schema": "specimen",
+          "@table": "kernel_srfi"
+        },
+        "overwrite": "N",
+        "delete": "N",
+        "command": "\n\t\t\timage_id bigint,\n\t\t\tplot_id text,\t\n            band varchar,\n            srfi integer,\n            srfi_std integer,\n    \t\tprimary_key (image_id, plot_id, band)\t\n\t\t"
+      }
+    ]
+  }
+}

@@ -9,7 +9,7 @@
         "table": "regions",
         "command": [
           "system varchar",
-          "region_cat varchar",
+          "region_category varchar",
           "region_id varchar",
           "region_type char(1)",
           "epsg smallint",
@@ -25,7 +25,7 @@
           "min_y double precision",
           "max_x double precision",
           "max_y double precision",
-          "PRIMARY KEY (system, region_id)"
+          "primary_key (system, region_id)"
         ]
       }
     },
@@ -35,16 +35,16 @@
       "delete": false,
       "parameters": {
         "schema": "regions",
-        "table": "def_regions",
+        "table": "definition_regions",
         "command": [
           "system varchar",
-          "region_cat varchar NOT NULL",
+          "region_category varchar not null",
           "region_id varchar",
           "region_name varchar",
-          "parent_id varchar NOT NULL",
-          "title TEXT",
-          "label TEXT",
-          "PRIMARY KEY (system, region_cat, region_id)"
+          "parent_id varchar not null",
+          "title text",
+          "label text",
+          "primary_key (system, region_category, region_id)"
         ]
       }
     },
@@ -57,17 +57,17 @@
         "table": "tracts",
         "command": [
           "system varchar",
-          "parent_id TEXT NOT NULL",
-          "tract_id TEXT",
+          "parent_id text not null",
+          "tract_id text",
           "tract_name varchar",
           "region_type char(1)",
           "creator varchar",
           "owner varchar",
           "title varchar",
           "label varchar",
-          "share smallint DEFAULT 5",
-          "create_date date DEFAULT CURRENT_DATE",
-          "PRIMARY KEY (system, tract_id)"
+          "share smallint default 5",
+          "create_date date default current_date",
+          "primary_key (system, tract_id)"
         ]
       }
     },
@@ -80,15 +80,15 @@
         "table": "sites",
         "command": [
           "system varchar",
-          "site_id TEXT",
+          "site_id text",
           "site_name varchar",
           "owner varchar",
-          "tract_id TEXT",
-          "title TEXT",
-          "label TEXT",
-          "share smallint DEFAULT 5",
-          "create_date date DEFAULT CURRENT_DATE",
-          "PRIMARY KEY (system, site_id, tract_id, owner)"
+          "tract_id text",
+          "title text",
+          "label text",
+          "share smallint default 5",
+          "create_date date default current_date",
+          "primary_key (system, site_id, tract_id, owner)"
         ]
       }
     }

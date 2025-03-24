@@ -8,14 +8,14 @@
         "schema": "process",
         "table": "comp_label_defaults",
         "command": [
-          "sub_proc_id varchar",
+          "sub_process_id varchar",
           "mode varchar",
-          "comp_item varchar",
+          "composition_item varchar",
           "prefix varchar",
           "postfix varchar",
           "find varchar",
           "replace varchar",
-          "PRIMARY KEY (sub_proc_id, mode, comp_item)"
+          "primary_key (sub_process_id, mode, composition_item)"
         ]
       }
     },
@@ -28,9 +28,9 @@
         "table": "comp_label_defaults",
         "command": {
           "columns": [
-            "sub_proc_id",
+            "sub_process_id",
             "mode",
-            "comp_item",
+            "composition_item",
             "prefix",
             "postfix",
             "find",
@@ -38,7 +38,7 @@
           ],
           "values": [
             [
-              "'GdalDemTiles'",
+              "'gdal_dem_tiles'",
               "'TPI'",
               "'prefix'",
               "''",
@@ -47,7 +47,7 @@
               "'tpi'"
             ],
             [
-              "'GdalDemTiles'",
+              "'gdal_dem_tiles'",
               "'TPI'",
               "'layer_id'",
               "''",
@@ -56,7 +56,7 @@
               "'tpi'"
             ],
             [
-              "'GdalDemTiles'",
+              "'gdal_dem_tiles'",
               "'TPI'",
               "'suffix'",
               "''",
@@ -65,7 +65,7 @@
               "''"
             ],
             [
-              "'GdalDemTiles'",
+              "'gdal_dem_tiles'",
               "'TPI'",
               "'data_unit'",
               "''",
@@ -74,7 +74,7 @@
               "'tpi'"
             ],
             [
-              "'GdalDemTiles'",
+              "'gdal_dem_tiles'",
               "'TRI'",
               "'prefix'",
               "''",
@@ -83,7 +83,7 @@
               "'tri'"
             ],
             [
-              "'GdalDemTiles'",
+              "'gdal_dem_tiles'",
               "'TRI'",
               "'layer_id'",
               "''",
@@ -92,7 +92,7 @@
               "'tri'"
             ],
             [
-              "'GdalDemTiles'",
+              "'gdal_dem_tiles'",
               "'TRI'",
               "'suffix'",
               "''",
@@ -101,7 +101,7 @@
               "''"
             ],
             [
-              "'GdalDemTiles'",
+              "'gdal_dem_tiles'",
               "'TRI'",
               "'data_unit'",
               "''",
@@ -110,7 +110,7 @@
               "'tri'"
             ],
             [
-              "'GdalDemTiles'",
+              "'gdal_dem_tiles'",
               "'slope'",
               "'prefix'",
               "''",
@@ -119,7 +119,7 @@
               "'slope'"
             ],
             [
-              "'GdalDemTiles'",
+              "'gdal_dem_tiles'",
               "'slope'",
               "'layer_id'",
               "''",
@@ -128,7 +128,7 @@
               "'slope'"
             ],
             [
-              "'GdalDemTiles'",
+              "'gdal_dem_tiles'",
               "'slope'",
               "'suffix'",
               "''",
@@ -137,7 +137,7 @@
               "''"
             ],
             [
-              "'GdalDemTiles'",
+              "'gdal_dem_tiles'",
               "'slope'",
               "'data_unit'",
               "''",
@@ -146,7 +146,7 @@
               "'percent slope'"
             ],
             [
-              "'GdalDemTiles'",
+              "'gdal_dem_tiles'",
               "'aspect'",
               "'prefix'",
               "''",
@@ -155,7 +155,7 @@
               "'aspect'"
             ],
             [
-              "'GdalDemTiles'",
+              "'gdal_dem_tiles'",
               "'aspect'",
               "'layer_id'",
               "''",
@@ -164,7 +164,7 @@
               "'aspect'"
             ],
             [
-              "'GdalDemTiles'",
+              "'gdal_dem_tiles'",
               "'aspect'",
               "'suffix'",
               "''",
@@ -173,7 +173,7 @@
               "''"
             ],
             [
-              "'GdalDemTiles'",
+              "'gdal_dem_tiles'",
               "'aspect'",
               "'data_unit'",
               "''",
@@ -182,7 +182,7 @@
               "'geographic aspect'"
             ],
             [
-              "'GdalDemTiles'",
+              "'gdal_dem_tiles'",
               "'hillshade'",
               "'prefix'",
               "''",
@@ -191,7 +191,7 @@
               "'shade'"
             ],
             [
-              "'GdalDemTiles'",
+              "'gdal_dem_tiles'",
               "'hillshade'",
               "'layer_id'",
               "''",
@@ -200,7 +200,7 @@
               "'shade'"
             ],
             [
-              "'GdalDemTiles'",
+              "'gdal_dem_tiles'",
               "'hillshade'",
               "'suffix'",
               "''",
@@ -209,7 +209,7 @@
               "''"
             ],
             [
-              "'GdalDemTiles'",
+              "'gdal_dem_tiles'",
               "'hillshade'",
               "'data_unit'",
               "''",
@@ -218,7 +218,7 @@
               "'hillshade'"
             ],
             [
-              "'GdalDemTiles'",
+              "'gdal_dem_tiles'",
               "'roughness'",
               "'prefix'",
               "''",
@@ -227,7 +227,7 @@
               "'roughness'"
             ],
             [
-              "'GdalDemTiles'",
+              "'gdal_dem_tiles'",
               "'roughness'",
               "'layer_id'",
               "''",
@@ -236,7 +236,7 @@
               "'roughness'"
             ],
             [
-              "'GdalDemTiles'",
+              "'gdal_dem_tiles'",
               "'roughness'",
               "'suffix'",
               "''",
@@ -245,7 +245,7 @@
               "''"
             ],
             [
-              "'GdalDemTiles'",
+              "'gdal_dem_tiles'",
               "'roughness'",
               "'data_unit'",
               "''",
@@ -254,7 +254,7 @@
               "'roughness'"
             ],
             [
-              "'GdalDemTiles'",
+              "'gdal_dem_tiles'",
               "'landformTPI'",
               "'prefix'",
               "''",
@@ -263,7 +263,7 @@
               "'landform-TPI'"
             ],
             [
-              "'GdalDemTiles'",
+              "'gdal_dem_tiles'",
               "'landformTPI'",
               "'layer_id'",
               "''",
@@ -272,7 +272,7 @@
               "'landform-TPI'"
             ],
             [
-              "'GdalDemTiles'",
+              "'gdal_dem_tiles'",
               "'landformTPI'",
               "'suffix'",
               "''",
@@ -281,7 +281,7 @@
               "''"
             ],
             [
-              "'GdalDemTiles'",
+              "'gdal_dem_tiles'",
               "'landformTPI'",
               "'cell_null'",
               "''",
@@ -290,7 +290,7 @@
               "'255'"
             ],
             [
-              "'GdalDemTiles'",
+              "'gdal_dem_tiles'",
               "'landformTPI'",
               "'cell_type'",
               "''",
@@ -299,7 +299,7 @@
               "'Byte'"
             ],
             [
-              "'GdalDemTiles'",
+              "'gdal_dem_tiles'",
               "'landformTPI'",
               "'data_unit'",
               "''",
@@ -308,7 +308,7 @@
               "'class'"
             ],
             [
-              "'GdalDemTiles'",
+              "'gdal_dem_tiles'",
               "'landformTPI'",
               "'neasure'",
               "''",
@@ -329,9 +329,9 @@
         "table": "comp_label_defaults",
         "command": {
           "columns": [
-            "sub_proc_id",
+            "sub_process_id",
             "mode",
-            "comp_item",
+            "composition_item",
             "prefix",
             "postfix",
             "find",
@@ -339,7 +339,7 @@
           ],
           "values": [
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'elev'",
               "'prefix'",
               "''",
@@ -348,7 +348,7 @@
               "''"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'elev'",
               "'layer_id'",
               "''",
@@ -357,7 +357,7 @@
               "''"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'elev'",
               "'suffix'",
               "''",
@@ -366,7 +366,7 @@
               "''"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'elev'",
               "'data_unit'",
               "''",
@@ -375,7 +375,7 @@
               "''"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'TPI'",
               "'prefix'",
               "''",
@@ -384,7 +384,7 @@
               "'tpi'"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'TPI'",
               "'layer_id'",
               "''",
@@ -393,7 +393,7 @@
               "'tpi'"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'TPI'",
               "'suffix'",
               "''",
@@ -402,7 +402,7 @@
               "''"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'TPI'",
               "'data_unit'",
               "''",
@@ -411,7 +411,7 @@
               "'tpi'"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'TRI'",
               "'prefix'",
               "''",
@@ -420,7 +420,7 @@
               "'tri'"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'TRI'",
               "'layer_id'",
               "''",
@@ -429,7 +429,7 @@
               "'tri'"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'TRI'",
               "'suffix'",
               "''",
@@ -438,7 +438,7 @@
               "''"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'TRI'",
               "'data_unit'",
               "''",
@@ -447,7 +447,7 @@
               "'tri'"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'slope'",
               "'prefix'",
               "''",
@@ -456,7 +456,7 @@
               "'slope'"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'slope'",
               "'layer_id'",
               "''",
@@ -465,7 +465,7 @@
               "'slope'"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'slope'",
               "'suffix'",
               "''",
@@ -474,7 +474,7 @@
               "''"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'slope'",
               "'data_unit'",
               "''",
@@ -483,7 +483,7 @@
               "'percent slope'"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'aspect'",
               "'prefix'",
               "''",
@@ -492,7 +492,7 @@
               "'aspect'"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'aspect'",
               "'layer_id'",
               "''",
@@ -501,7 +501,7 @@
               "'aspect'"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'aspect'",
               "'suffix'",
               "''",
@@ -510,7 +510,7 @@
               "''"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'aspect'",
               "'data_unit'",
               "''",
@@ -519,7 +519,7 @@
               "'geographic aspect'"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'hillshade'",
               "'prefix'",
               "''",
@@ -528,7 +528,7 @@
               "'shade'"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'hillshade'",
               "'layer_id'",
               "''",
@@ -537,7 +537,7 @@
               "'shade'"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'hillshade'",
               "'suffix'",
               "''",
@@ -546,7 +546,7 @@
               "''"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'hillshade'",
               "'data_unit'",
               "''",
@@ -555,7 +555,7 @@
               "'hillshade'"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'roughness'",
               "'prefix'",
               "''",
@@ -564,7 +564,7 @@
               "'roughness'"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'roughness'",
               "'layer_id'",
               "''",
@@ -573,7 +573,7 @@
               "'roughness'"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'roughness'",
               "'suffix'",
               "''",
@@ -582,7 +582,7 @@
               "''"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'roughness'",
               "'data_unit'",
               "''",
@@ -591,7 +591,7 @@
               "'roughness'"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'landformTPI'",
               "'prefix'",
               "''",
@@ -600,7 +600,7 @@
               "'landform-TPI'"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'landformTPI'",
               "'layer_id'",
               "''",
@@ -609,7 +609,7 @@
               "'landform-TPI'"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'landformTPI'",
               "'suffix'",
               "''",
@@ -618,7 +618,7 @@
               "''"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'landformTPI'",
               "'cell_null'",
               "''",
@@ -627,7 +627,7 @@
               "'255'"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'landformTPI'",
               "'cell_type'",
               "''",
@@ -636,7 +636,7 @@
               "'Byte'"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'landformTPI'",
               "'data_unit'",
               "''",
@@ -645,7 +645,7 @@
               "'class'"
             ],
             [
-              "'NumpyDemTiles'",
+              "'numpy_dem_tiles'",
               "'landformTPI'",
               "'neasure'",
               "''",

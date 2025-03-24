@@ -8,17 +8,17 @@
         "schema": "user_locale",
         "table": "user_projects",
         "command": [
-          "userproj_id bigserial",
-          "proj_id TEXT",
-          "proj_name varchar NOT NULL",
-          "owner varchar NOT NULL",
-          "creator varchar NOT NULL",
-          "share smallint DEFAULT 5",
+          "user_project_id bigserial",
+          "project_id text",
+          "project_name varchar not null",
+          "owner varchar not null",
+          "creator varchar not null",
+          "share smallint default 5",
           "title varchar",
           "label varchar",
-          "descript TEXT",
-          "create_date date DEFAULT CURRENT_DATE",
-          "PRIMARY KEY (proj_id)"
+          "description text",
+          "create_date date default current_date",
+          "primary_key (project_id)"
         ]
       }
     },
@@ -28,12 +28,12 @@
       "delete": false,
       "parameters": {
         "schema": "user_locale",
-        "table": "proj_levels",
+        "table": "project_levels",
         "command": [
-          "proj_level TEXT",
+          "project_level text",
           "title varchar",
           "label varchar",
-          "PRIMARY KEY (proj_level)"
+          "primary_key (project_level)"
         ]
       }
     },
@@ -43,10 +43,10 @@
       "delete": false,
       "parameters": {
         "schema": "user_locale",
-        "table": "proj_levels",
+        "table": "project_levels",
         "command": {
           "columns": [
-            "proj_level","title","label"
+            "project_level","title","label"
           ],
           "values": [
             [
@@ -86,9 +86,9 @@
         "schema": "user_locale",
         "table": "proj_keywords",
         "command": [
-          "proj_id TEXT",
-          "keyword TEXT",
-          "PRIMARY KEY (proj_id, keyword)"
+          "project_id text",
+          "keyword text",
+          "primary_key (project_id, keyword)"
         ]
       }
     },
@@ -100,9 +100,9 @@
         "schema": "user_locale",
         "table": "proj_ancil",
         "command": [
-          "proj_id TEXT",
-          "ancil_id TEXT",
-          "PRIMARY KEY (proj_id, ancil_id)"
+          "project_id text",
+          "ancillary_id text",
+          "primary_key (project_id, ancil_id)"
         ]
       }
     },
@@ -114,9 +114,9 @@
         "schema": "user_locale",
         "table": "link_proj_region",
         "command": [
-          "proj_id TEXT",
+          "project_id text",
           "region_id varchar",
-          "PRIMARY KEY (proj_id, region_id)"
+          "primary_key (project_id, region_id)"
         ]
       }
     }

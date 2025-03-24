@@ -6,13 +6,13 @@
       "delete": false,
       "parameters": {
         "schema": "climate_index",
-        "table": "clim_index",
+        "table": "climate_index",
         "command": [
-          "index TEXT NOT NULL",
+          "index text not null",
           "acquisition_date date",
           "acquisition_date_str char(6)",
           "value real",
-          "PRIMARY KEY (index, acquisition_date)"
+          "primary_key (index, acquisition_date)"
         ]
       }
     },
@@ -24,12 +24,12 @@
         "schema": "climate_index",
         "table": "index_meta",
         "command": [
-          "index TEXT NOT NULL",
-          "type TEXT NOT NULL",
-          "source TEXT NOT NULL",
-          "url TEXT NOT NULL",
-          "latest_update_date DATE DEFAULT CURRENT_DATE",
-          "PRIMARY KEY (index)"
+          "index text not null",
+          "type text not null",
+          "source text not null",
+          "url text not null",
+          "latest_update_date date default current_date",
+          "primary_key (index)"
         ]
       }
     }

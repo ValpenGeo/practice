@@ -6,14 +6,14 @@
       "delete": false,
       "parameters": {
         "schema": "system",
-        "table": "region_cats",
+        "table": "region_categories",
         "command": [
           "stratum smallint",
-          "region_cat varchar",
-          "parent_cat varchar",
+          "region_category varchar",
+          "parent_category varchar",
           "title varchar",
           "label varchar",
-          "PRIMARY KEY (region_cat, stratum)"
+          "primary_key (region_category, stratum)"
         ]
       }
     },
@@ -23,15 +23,15 @@
       "delete": false,
       "parameters": {
         "schema": "system",
-        "table": "def_regions",
+        "table": "definition_regions",
         "command": [
-          "region_cat varchar NOT NULL",
+          "region_category varchar not null",
           "region_id varchar",
           "region_name varchar",
-          "parent_id varchar NOT NULL",
-          "title TEXT",
-          "label TEXT",
-          "PRIMARY KEY (region_cat, region_id)"
+          "parent_id varchar not null",
+          "title text",
+          "label text",
+          "primary_key (region_category, region_id)"
         ]
       }
     },
@@ -43,7 +43,7 @@
         "schema": "system",
         "table": "regions",
         "command": [
-          "region_cat varchar",
+          "region_category varchar",
           "region_id varchar",
           "region_type char(1)",
           "epsg smallint",
@@ -59,7 +59,7 @@
           "min_y double precision",
           "max_x double precision",
           "max_y double precision",
-          "PRIMARY KEY (region_id)"
+          "primary_key (region_id)"
         ]
       }
     },
@@ -74,10 +74,10 @@
           "region_id varchar",
           "region_type char(1)",
           "wrs char(1)",
-          "dir char(1) DEFAULT 'D'",
+          "dir char(1) default 'D'",
           "wrs_path smallint",
           "wrs_row smallint",
-          "PRIMARY KEY (region_id, wrs, wrs_path, wrs_row, dir)"
+          "primary_key (region_id, wrs, wrs_path, wrs_row, dir)"
         ]
       }
     },
@@ -93,7 +93,7 @@
           "region_type char(1)",
           "h_tile smallint",
           "v_tile smallint",
-          "PRIMARY KEY (region_id, h_tile, v_tile)"
+          "primary_key (region_id, h_tile, v_tile)"
         ]
       }
     },
@@ -109,7 +109,7 @@
           "region_type char(1)",
           "utm_zone integer",
           "mgrs_id varchar",
-          "PRIMARY KEY (region_id, utm_zone, mgrs_id)"
+          "primary_key (region_id, utm_zone, mgrs_id)"
         ]
       }
     },
@@ -125,7 +125,7 @@
           "region_type char(1)",
           "x_tile smallint",
           "y_tile smallint",
-          "PRIMARY KEY (region_id, x_tile, y_tile)"
+          "primary_key (region_id, x_tile, y_tile)"
         ]
       }
     },
@@ -141,7 +141,7 @@
           "region_type char(1)",
           "x_tile smallint",
           "y_tile smallint",
-          "PRIMARY KEY (region_id, x_tile, y_tile)"
+          "primary_key (region_id, x_tile, y_tile)"
         ]
       }
     },
@@ -157,7 +157,7 @@
           "region_type char(1)",
           "x_tile smallint",
           "y_tile smallint",
-          "PRIMARY KEY (region_id, x_tile, y_tile)"
+          "primary_key (region_id, x_tile, y_tile)"
         ]
       }
     }

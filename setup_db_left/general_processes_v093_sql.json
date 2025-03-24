@@ -8,11 +8,11 @@
         "schema": "process",
         "table": "root_processes",
         "command": [
-          "root_proc_id TEXT",
+          "root_process_id text",
           "title varchar",
           "label varchar",
           "creator varchar",
-          "PRIMARY KEY (root_proc_id)"
+          "primary_key (root_process_id)"
         ]
       }
     },
@@ -24,8 +24,8 @@
         "schema": "process",
         "table": "sub_processes",
         "command": [
-          "root_proc_id TEXT",
-          "sub_proc_id TEXT",
+          "root_process_id text",
+          "sub_process_id text",
           "version varchar",
           "min_user_stratum integer",
           "title varchar",
@@ -33,7 +33,7 @@
           "creator varchar",
           "access varchar",
           "create_date date",
-          "PRIMARY KEY (sub_proc_id, version)"
+          "primary_key (sub_process_id, version)"
         ]
       }
     },
@@ -45,9 +45,9 @@
         "schema": "process",
         "table": "proc_div",
         "command": [
-          "sub_proc_id TEXT",
+          "sub_process_id text",
           "division varchar",
-          "PRIMARY KEY (sub_proc_id, division)"
+          "primary_key (sub_process_id, division)"
         ]
       }
     },
@@ -59,7 +59,7 @@
         "schema": "process",
         "table": "proc_sys",
         "command": [
-          "sub_proc_id TEXT",
+          "sub_process_id text",
           "system varchar",
           "src_system varchar",
           "dst_system varchar",
@@ -67,7 +67,7 @@
           "dst_division varchar",
           "src_epsg integer",
           "dst_epsg integer",
-          "PRIMARY KEY (sub_proc_id, system, src_system, dst_system, src_division, dst_division)"
+          "primary_key (sub_process_id, system, src_system, dst_system, src_division, dst_division)"
         ]
       }
     },
@@ -79,18 +79,18 @@
         "schema": "process",
         "table": "process_params",
         "command": [
-          "root_proc_id TEXT",
-          "sub_proc_id TEXT",
+          "root_process_id text",
+          "sub_process_id text",
           "version varchar",
           "parent varchar",
           "element varchar",
-          "param_id varchar",
-          "param_typ varchar",
-          "required BOOL",
+          "parameter_id varchar",
+          "parameter_type varchar",
+          "required boolean",
           "default_value varchar",
           "hint varchar",
-          "band_id varchar DEFAULT 'False'",
-          "PRIMARY KEY (sub_proc_id, version, parent, element, param_id, default_value, band_id)"
+          "band_id varchar default 'False'",
+          "primary_key (sub_process_id, version, parent, element, parameter_id, default_value, band_id)"
         ]
       }
     },
@@ -102,15 +102,15 @@
         "schema": "process",
         "table": "process_param_set_values",
         "command": [
-          "root_proc_id TEXT",
-          "sub_proc_id TEXT",
+          "root_process_id text",
+          "sub_process_id text",
           "version varchar",
           "parent varchar",
           "element varchar",
-          "param_id varchar",
+          "parameter_id varchar",
           "value varchar",
           "label varchar",
-          "PRIMARY KEY (sub_proc_id, version, parent, element, param_id, value)"
+          "primary_key (sub_process_id, version, parent, element, parameter_id, value)"
         ]
       }
     },
@@ -122,15 +122,15 @@
         "schema": "process",
         "table": "process_param_set_min_max",
         "command": [
-          "root_proc_id TEXT",
-          "sub_proc_id TEXT",
+          "root_process_id text",
+          "sub_process_id text",
           "version varchar",
           "parent varchar",
           "element varchar",
-          "param_id varchar",
+          "parameter_id varchar",
           "min_val real",
           "max_val real",
-          "PRIMARY KEY (sub_proc_id, version, parent, element, param_id)"
+          "primary_key (sub_process_id, version, parent, element, parameter_id)"
         ]
       }
     }

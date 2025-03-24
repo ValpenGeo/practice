@@ -8,14 +8,14 @@
         "schema": "process",
         "table": "process_chain",
         "command": [
-          "chain_id TEXT",
-          "title TEXT",
-          "label TEXT",
+          "chain_id text",
+          "title text",
+          "label text",
           "creator varchar",
           "owner varchar",
           "sharing varchar",
           "create_date date",
-          "PRIMARY KEY (chain_id)"
+          "primary_key (chain_id)"
         ]
       }
     },
@@ -27,11 +27,11 @@
         "schema": "process",
         "table": "chain_process",
         "command": [
-          "chain_id TEXT",
+          "chain_id text",
           "chain_step smallint",
-          "sub_proc_id TEXT",
+          "sub_process_id text",
           "version varchar",
-          "PRIMARY KEY (chain_id, chain_step, sub_proc_id)"
+          "primary_key (chain_id, chain_step, sub_process_id)"
         ]
       }
     },
@@ -43,11 +43,11 @@
         "schema": "process",
         "table": "chain_comp_in",
         "command": [
-          "chain_id TEXT",
+          "chain_id text",
           "chain_step smallint",
-          "comp_id varchar",
+          "composition_id varchar",
           "suffix varchar",
-          "PRIMARY KEY (chain_id, chain_step, comp_id,suffix)"
+          "primary_key (chain_id, chain_step, composition_id,suffix)"
         ]
       }
     },
@@ -59,11 +59,11 @@
         "schema": "process",
         "table": "chain_params",
         "command": [
-          "chain_id TEXT",
+          "chain_id text",
           "chain_step smallint",
           "parameter varchar",
           "value varchar",
-          "PRIMARY KEY (chain_id, chain_step, parameter, value)"
+          "primary_key (chain_id, chain_step, parameter, value)"
         ]
       }
     },
@@ -75,9 +75,9 @@
         "schema": "process",
         "table": "chain_comp_out",
         "command": [
-          "chain_id TEXT",
+          "chain_id text",
           "chain_step smallint",
-          "comp_id varchar",
+          "composition_id varchar",
           "suffix varchar",
           "cell_null integer",
           "cell_type varchar",
@@ -85,7 +85,7 @@
           "offset_add integer",
           "data_unit varchar",
           "measure char(1)",
-          "PRIMARY KEY (chain_id, chain_step, comp_id, suffix)"
+          "primary_key (chain_id, chain_step, composition_id, suffix)"
         ]
       }
     }

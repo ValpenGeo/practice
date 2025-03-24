@@ -6,7 +6,7 @@
       "delete": false,
       "parameters": {
         "schema": "ease2n",
-        "table": "regions",
+        "table": "region",
         "command": {
           "columns": [
             "region_id",

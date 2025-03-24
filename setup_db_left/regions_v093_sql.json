@@ -5,8 +5,8 @@
       "overwrite": false,
       "delete": false,
       "parameters": {
-        "schema": "regions",
-        "table": "regions",
+        "schema": "region",
+        "table": "region",
         "command": [
           "system varchar",
           "region_category varchar",
@@ -34,8 +34,8 @@
       "overwrite": false,
       "delete": false,
       "parameters": {
-        "schema": "regions",
-        "table": "definition_regions",
+        "schema": "region",
+        "table": "definition_region",
         "command": [
           "system varchar",
           "region_category varchar not null",
@@ -53,7 +53,7 @@
       "overwrite": false,
       "delete": false,
       "parameters": {
-        "schema": "regions",
+        "schema": "region",
         "table": "tracts",
         "command": [
           "system varchar",
@@ -76,7 +76,7 @@
       "overwrite": false,
       "delete": false,
       "parameters": {
-        "schema": "regions",
+        "schema": "region",
         "table": "sites",
         "command": [
           "system varchar",

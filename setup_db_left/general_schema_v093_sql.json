@@ -29,7 +29,7 @@
       "overwrite": false,
       "delete": false,
       "parameters": {
-        "schema": "regions"
+        "schema": "region"
       }
     },
     {

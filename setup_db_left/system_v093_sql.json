@@ -23,7 +23,7 @@
       "delete": false,
       "parameters": {
         "schema": "system",
-        "table": "definition_regions",
+        "table": "definition_region",
         "command": [
           "region_category varchar not null",
           "region_id varchar",
@@ -41,7 +41,7 @@
       "delete": false,
       "parameters": {
         "schema": "system",
-        "table": "regions",
+        "table": "region",
         "command": [
           "region_category varchar",
           "region_id varchar",
@@ -87,7 +87,7 @@
       "delete": false,
       "parameters": {
         "schema": "system",
-        "table": "regions_modis",
+        "table": "region_modis",
         "command": [
           "region_id varchar",
           "region_type char(1)",
@@ -103,7 +103,7 @@
       "delete": false,
       "parameters": {
         "schema": "system",
-        "table": "regions_sentinel",
+        "table": "region_sentinel",
         "command": [
           "region_id varchar",
           "region_type char(1)",

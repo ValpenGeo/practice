@@ -1,0 +1,12 @@
+name: xspectrodb
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - numpy
+  - python=3.12
+  - pandas
+  - matplotlib
+  - pyserial
+  - psycopg2
+prefix: xspectrdb
